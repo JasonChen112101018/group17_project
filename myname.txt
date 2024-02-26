@@ -1,6 +1,4 @@
-JasonChen
-112101018 陳玠融
-poyuan
-112511272
-Yuan Ting Lin
-112511078 
+JasonChen, poyuan, Yuan Ting Lin
+112101018 陳玠融 醫學系大一
+112511272 陳柏元 電機系大一
+112511078 林沅霆 電機系大一
