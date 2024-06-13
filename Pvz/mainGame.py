@@ -16,9 +16,22 @@ from entity.plant.cherryBomb import CherryBomb
 import threading
 import time
 '''
-import pygame, sys, random
-import painter , actioner , mouseListener , threading , time
-import .back, .plant, .zombie, .util, .images
+import pygame
+import sys
+import random
+import threading
+import time
+
+import painter
+import actioner
+import mouseListener
+
+from . import back
+from . import plant
+from . import zombie
+from . import util
+from . import images
+
 
 
 '''#生成太陽
@@ -212,9 +225,9 @@ def hit(zombie):
             elif zombie.life == 0:
                 bus.zombies.append(Zombie_dead(screen, sets.zombieDieImages, zombie.x, zombie.y))'''
 
-   '''# 子彈超出邊界
-        if bullet.outOfBounds():
-            bus.bullets.remove(bullet)'''
+        # 子彈超出邊界
+        #if bullet.outOfBounds():
+            #bus.bullets.remove(bullet)'''
 
 
 '''
