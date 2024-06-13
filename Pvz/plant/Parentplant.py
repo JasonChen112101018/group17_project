@@ -29,6 +29,8 @@ class Plant(object):
         self.screen.blit(self.image, (self.x, self.y))
 
     # 植物拖曳
-    @abc.abstractmethod
+     @abc.abstractmethod
     def step(self, bus, screen, sets):
         pass
+
+
