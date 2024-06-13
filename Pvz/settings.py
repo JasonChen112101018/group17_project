@@ -241,6 +241,7 @@ class Setting(object):
         self.snowPeaBulletImg = 'image/snowBullet.png'
         # 豌豆子弹碎裂
         self.bulletHitImg = pygame.image.load('image/PeaBulletHit.png')
+        self.snowbulletHitImg = pygame.image.load('image/SnowPeaBulletHit.png')
         # 关于草地格子的坐标
         # 格子X坐标
         self.gridXIndexes = [260, 340, 418, 500, 583, 662, 740, 820, 910, 996]
