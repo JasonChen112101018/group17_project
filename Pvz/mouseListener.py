@@ -81,14 +81,14 @@ def initPlantsMouseClickListener(bus, screen):
                 Constant.SUNFLOWER_SELECTED: 1,
                 Constant.PEASHOOTER_SELECTED: 2,
                 Constant.SPIKEWEED_SELECTED: 3,
-                Constant.SHOWPEA_SELECTED: 4,
+                Constant.SNOWPEA_SELECTED: 4,
             }
             plantdict = [
                 Wallnut(screen, plantX, plantY, getImages(sets.plantsInitImages[0])),
                 Sunflower(screen, plantX, plantY, getImages(sets.plantsInitImages[1])),
                 Peashooter(screen, plantX, plantY, getImages(sets.plantsInitImages[2])),
                 Spikeweed(screen, plantX, plantY, getImages(sets.plantsInitImages[3])),
-                Snowshooter(screen, plantX, plantY, getImages(sets.plantsInitImages[4]), bus),
+                Snowpea(screen, plantX, plantY, getImages(sets.plantsInitImages[4]), bus),
             ]
             if bus.cardState == Constant.CARD_CLICKED and bus.cardSelection in imagedict:
                 index = imagedict[bus.cardSelection]
