@@ -1,8 +1,11 @@
 import pygame, sys, random
-import ..painter, ..actioner, ..mouseListener , ..settings
-import ..util
-import ..zombie
-import ..plant
+from ..painter import painter
+from ..actioner import actioner
+from ..mouseListener import mouseListener
+from ..settings import Setting
+from ..util import Bus
+from ..zombie import Zombie_normal, Zombie_bucket, Zombie_head, Zombie_dead
+from ..plant import Sun
 
 
 #生成太陽
