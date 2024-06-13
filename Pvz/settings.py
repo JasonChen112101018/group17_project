@@ -24,7 +24,7 @@ class Setting(object):
         self.Button = pygame.image.load('image/game_state/Button.png')
         self.Pause = pygame.image.load('image/game_state/Pause.png')
 
-        # 普通僵尸
+        # normal zombie
         self.zombie_normalImages = [
             "image/zombie_normal/0.png",
             "image/zombie_normal/1.png",
@@ -50,7 +50,7 @@ class Setting(object):
             "image/zombie_normal/21.png"
         ]
         
-        # 铁桶僵尸
+        # bucket zombie
         self.zombie_bucketImages = [
             "image/zombie_bucket/0.png",
             "image/zombie_bucket/1.png",
@@ -69,7 +69,7 @@ class Setting(object):
             "image/zombie_bucket/14.png"
         ]
 
-        # 掉头僵尸
+        # lost head zombie
         self.zombieLostHeadImages = [
             "image/zombieLostHead/0.png",
             "image/zombieLostHead/1.png",
@@ -90,7 +90,7 @@ class Setting(object):
             "image/zombieLostHead/16.png",
             "image/zombieLostHead/17.png"
         ]
-        # 掉头
+        # head
         self.zombieHeadImages = [
             "image/zombieHead/0.png",
             "image/zombieHead/1.png",
@@ -105,7 +105,7 @@ class Setting(object):
             "image/zombieHead/10.png",
             "image/zombieHead/11.png"
         ]
-        # 普通僵尸碰撞图片
+        # normal zombie attack
         self.normalAttackImages = [
             "image/zombie_normalAttack/0.png",
             "image/zombie_normalAttack/1.png",
@@ -131,7 +131,7 @@ class Setting(object):
 
         ]
 
-        # 铁桶僵尸碰撞图片
+        # bucket zombie attack
         self.bucketAttackImages = [
             "image/zombie_bucketAttack/0.png",
             "image/zombie_bucketAttack/1.png",
@@ -146,7 +146,7 @@ class Setting(object):
             "image/zombie_bucketAttack/10.png"
         ]
 
-        # 僵尸死掉
+        # zombie die
         self.zombieDieImages = [
             "image/zombieDie/0.png",
             "image/zombieDie/1.png",
@@ -160,7 +160,7 @@ class Setting(object):
             "image/zombieDie/9.png"
         ]
 
-        # 掉头僵尸碰撞图片
+        # lost head zombie attack
         self.zombieLostHeadAttackImages = [
             "image/zombieLostHeadAttack/0.png",
             "image/zombieLostHeadAttack/1.png",
@@ -176,7 +176,7 @@ class Setting(object):
         ]
 
 
-        # 植物贴图文件夹路径
+        # plant 
         self.plantsInitImages = [
             plantsImgDir + 'WallNut/',
             plantsImgDir + 'SunFlower/',
@@ -192,7 +192,7 @@ class Setting(object):
         self.snowPeaImg = plantsImgDir + 'SnowPea/'
         self.spikeWeed = plantsImgDir + 'Spikeweed/'
 
-        # 加载卡片路径
+        # load the card trail
         self.cardNutWall = pygame.image.load('image/card/nutWall.png')
         self.cardPeashooter = pygame.image.load('image/card/peashooter.png')
         self.sunflower = pygame.image.load('image/card/sunflower.png')
@@ -208,7 +208,7 @@ class Setting(object):
         self.sunflowerDark = pygame.image.load('image/card/sunflowerdark.png')
         
 
-        # 卡片图片缩放
+        # scale the card
         self.cardNutWall = pygame.transform.scale(self.cardNutWall, (55,68))
         self.cardPeashooter = pygame.transform.scale(self.cardPeashooter, (55, 68))
         self.sunflower = pygame.transform.scale(self.sunflower, (55, 68))
@@ -223,10 +223,10 @@ class Setting(object):
         self.cardspikeWeedDark = pygame.transform.scale(self.cardspikeWeedDark, (55,68))
         self.sunflowerDark = pygame.transform.scale(self.sunflowerDark, (55, 68))
 
-        #图片旋转
+        #rotate the pic
         self.cardShovel = pygame.transform.rotate(self.cardShovel, 45)
 
-        # 卡片点击图片集合
+        # load
         self.cardImgs = [
             pygame.image.load('image/mouseMoveCard/mouseNut.gif'),
             pygame.image.load('image/mouseMoveCard/mouseSunflower.gif'),
@@ -236,33 +236,32 @@ class Setting(object):
             self.cardShovel
         ]
 
-        # 豌豆、仙人掌子弹贴图
+        # bullet pic
         self.peaBulletImg = 'image/peaBullet.png'
         self.snowPeaBulletImg = 'image/snowBullet.png'
-        # 豌豆子弹碎裂
+        # bullet explode
         self.bulletHitImg = pygame.image.load('image/PeaBulletHit.png')
         self.snowbulletHitImg = pygame.image.load('image/SnowPeaBulletHit.png')
-        # 关于草地格子的坐标
-        # 格子X坐标
+        # position
         self.gridXIndexes = [260, 340, 418, 500, 583, 662, 740, 820, 910, 996]
-        # 格子高度：
+        # height
         self.gridHeight = 95
-        # 下边界
+        # low boundary
         self.bottomY = 574
-        # 左边界：
+        # left boundary
         self.leftX = self.gridXIndexes[0]
-        # 上边界：
+        # upper boundary
         self.topY = self.bottomY - 5 * self.gridHeight
-        # 右边界：
+        # right boundary
         self.rightX = self.gridXIndexes[9]
 
-        # 开始界面图片加载
+        # start the surface load
         self.surface = pygame.image.load('image/Surface.jpg')
         self.surface = pygame.transform.scale(self.surface, (1600,900))
         self.beginBtn = pygame.image.load('image/beginBtn.png').subsurface(Rect((0, 0), (329, 148)))
         self.beginBtn = pygame.transform.scale(self.beginBtn, (500,200))
 
-        #结束界面图片加载
+        #end the image load
         self.zombiewin = pygame.image.load('image/ZombiesWon.png')
         self.selection = pygame.image.load('image/selection.png')
         self.banner = pygame.image.load('image/banner.png')
