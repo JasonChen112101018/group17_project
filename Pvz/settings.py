@@ -211,19 +211,17 @@ class Setting(object):
         # 卡片图片缩放
         self.cardNutWall = pygame.transform.scale(self.cardNutWall, (55,68))
         self.cardPeashooter = pygame.transform.scale(self.cardPeashooter, (55, 68))
-        self.cherry = pygame.transform.scale(self.cherry, (55, 68))
-        self.cactus = pygame.transform.scale(self.cactus, (55, 68))
         self.sunflower = pygame.transform.scale(self.sunflower, (55, 68))
-        self.cardPeashooterdouble = pygame.transform.scale(self.cardPeashooterdouble, (55, 68))
+        self.cardsnowPea = pygame.transform.scale(self.cardsnowPea, (55,68))
+        self.cardspikeWeed = pygame.transform.scale(self.cardspikeWeed, (55,68))
         self.cardShovelBack = pygame.transform.scale(self.cardShovelBack, (70,86))
         self.cardShovel = pygame.transform.scale(self.cardShovel, (55,55))
 
         self.cardNutWallDark = pygame.transform.scale(self.cardNutWallDark, (55, 68))
         self.cardPeashooterDark = pygame.transform.scale(self.cardPeashooterDark, (55, 68))
-        self.cherryDark = pygame.transform.scale(self.cherryDark, (55, 68))
-        self.cactusDark = pygame.transform.scale(self.cactusDark, (55, 68))
+        self.cardsnowPeaDark = pygame.transform.scale(self.cardsnowPeaDark, (55,68))
+        self.cardspikeWeedDark = pygame.transform.scale(self.cardspikeWeedDark, (55,68))
         self.sunflowerDark = pygame.transform.scale(self.sunflowerDark, (55, 68))
-        self.cardPeashooterdoubleDark = pygame.transform.scale(self.cardPeashooterdoubleDark, (55, 68))
 
         #图片旋转
         self.cardShovel = pygame.transform.rotate(self.cardShovel, 45)
