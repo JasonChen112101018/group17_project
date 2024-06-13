@@ -79,6 +79,19 @@ def eat(zombie):
 
 # 殭屍被攻擊
 def hit(zombie):
+    if isinstance(plant, Spikeweed):
+        if plant.x + plant.width/2 >= zb.x  and plant.x - plant.width/2 <= zb.x: 
+            if zb.y + 100 < plant.y + 100 and zb.y + 100 > plant.y:
+                zombie.life -= 0.5
+                zombie.x -= 0.2
+                if zombie.life <= 3:
+                    zombie.images = sets.zombieLostHeadAttackImages
+                elif zombie.life <= 5:
+                    zombie.images = sets.normalAttackImages
+                elif zombie.life <= 8:
+                    zombie.images = sets.bucketAttackImages
+                else:
+                    zombie.images = sets.bucketAttackImages
     for bullet in bus.bullets:
         if zombie.hitBy(bullet) and not isinstance(zombie, Zombie_head) and not isinstance(zombie, Zombie_dead):
             zombie.life -= 1
