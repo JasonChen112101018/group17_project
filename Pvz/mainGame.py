@@ -26,11 +26,11 @@ import painter
 import actioner
 import mouseListener
 
-from . import back
-from . import plant
-from . import zombie
-from . import util
-from . import images
+import background
+import plant
+import zombie
+import util
+import image
 
 
 
@@ -237,9 +237,9 @@ def hit(zombie):
 
 def main():
     pygame.display.set_caption("plants vs zombies")
-    initSun()
+    #background.initSun()
     while True:
-        action()
+        background.action()
         paint()
         pygame.display.update()
 
