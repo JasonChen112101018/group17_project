@@ -2,9 +2,9 @@ import pygame, sys, random
 import painter as painter
 import actioner as actioner
 import mouseListener as mouseListener
-import settings as sets
-import util as bus
-import sun as Sun
+from settings import Setting
+from util.bus import Bus
+from sun import Sun
 import zombie 
 #import Zombie_normal, Zombie_bucket, Zombie_head, Zombie_dead
 import plant
@@ -13,6 +13,9 @@ import plant
 
 #生成太陽
 screen = pygame.display.set_mode((1400, 600), 0, 0)
+
+sets = Setting()
+bus = Bus()
 
 def initSun():
     for i in range(1):

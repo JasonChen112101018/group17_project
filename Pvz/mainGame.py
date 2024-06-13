@@ -26,7 +26,7 @@ import painter
 import actioner
 import mouseListener
 
-import background
+from background import initSun, action, paint
 import plant
 import zombie
 import util
@@ -156,8 +156,9 @@ def zombiesAction():
             else:
                 bus.zombies.append(Zombie_normal(screen, sets.zombie_normalImages))
 
-
+'''
 # 殭屍被攻擊
+'''
 def hitAction():
     for zombie in bus.zombies:
         eat(zombie)
@@ -170,9 +171,10 @@ def hitAction():
                 zombie.images = sets.zombieLostHeadImages
                 zombie.headFlag = False
         elif zombie.life == 0:
-            bus.zombies.remove(zombie)
+            bus.zombies.remove(zombie)'''
 
 # 殭屍吃植物
+'''
 def eat(zb):
     for plant in bus.paintPlants:
         if not isinstance(plant, CherryBomb) and not isinstance(zb, Zombie_head) and not isinstance(zb, Zombie_dead):
@@ -200,10 +202,10 @@ def eat(zb):
                         elif zb.images == sets.coneheadAttackImages:
                             zb.images = sets.zombie_coneheadImages
                         else:
-                            zb.images = sets.zombie_bucketImages
+                            zb.images = sets.zombie_bucketImages'''
 
 
-
+'''
 # 殭屍被攻擊
 def hit(zombie):
     for bullet in bus.bullets:
@@ -223,23 +225,23 @@ def hit(zombie):
                     zombie.images = sets.zombieLostHeadImages
                     bus.zombies.append(Zombie_head(screen, sets.zombieHeadImages, zombie.x, zombie.y))
             elif zombie.life == 0:
-                bus.zombies.append(Zombie_dead(screen, sets.zombieDieImages, zombie.x, zombie.y))'''
+                bus.zombies.append(Zombie_dead(screen, sets.zombieDieImages, zombie.x, zombie.y))
 
         # 子彈超出邊界
         #if bullet.outOfBounds():
             #bus.bullets.remove(bullet)'''
 
 
-'''
-程序入口
-'''
+
+#程序入口
+
 
 
 def main():
     pygame.display.set_caption("plants vs zombies")
-    #background.initSun()
+    initSun()
     while True:
-        background.action()
+        action()
         paint()
         pygame.display.update()
 

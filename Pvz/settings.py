@@ -196,15 +196,15 @@ class Setting(object):
         self.cardNutWall = pygame.image.load('image/card/nutWall.png')
         self.cardPeashooter = pygame.image.load('image/card/peashooter.png')
         self.sunflower = pygame.image.load('image/card/sunflower.png')
-        self.cardsnowPea = pygame.image.load('images/card/snowpea.png')
-        self.cardspikeWeed = pygame.image.load('images/card/spikeweed.png')
+        self.cardsnowPea = pygame.image.load('image/card/snowpea.png')
+        self.cardspikeWeed = pygame.image.load('image/card/spikeweed.png')
         self.cardShovelBack = pygame.image.load('image/card/ShovelBack.png')
         self.cardShovel = pygame.image.load('image/card/Shovel.png')
 
         self.cardNutWallDark = pygame.image.load('image/card/nutdark.png')
         self.cardPeashooterDark = pygame.image.load('image/card/peashooterdark.png')
-        self.cardsnowPeaDark = pygame.image.load('images/card/snowpeadark.png')
-        self.cardspikeWeedDark = pygame.image.load('images/card/spikeweeddark.png')
+        self.cardsnowPeaDark = pygame.image.load('image/card/snowpeadark.png')
+        self.cardspikeWeedDark = pygame.image.load('image/card/spikeweeddark.png')
         self.sunflowerDark = pygame.image.load('image/card/sunflowerdark.png')
         
 
@@ -231,7 +231,7 @@ class Setting(object):
             pygame.image.load('image/mouseMoveCard/mouseNut.gif'),
             pygame.image.load('image/mouseMoveCard/mouseSunflower.gif'),
             pygame.image.load('image/mouseMoveCard/mousePeashooter.gif'),
-            pygame.image.load('image/mouseMoveCard/mouseSnowPea.png'),
+            pygame.image.load('image/mouseMoveCard/mouseSnowPea.gif'),
             pygame.image.load('image/mouseMoveCard/mouseSpikeweed.gif'),
             self.cardShovel
         ]
