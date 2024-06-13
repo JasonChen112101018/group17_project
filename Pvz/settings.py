@@ -195,19 +195,18 @@ class Setting(object):
         # 加载卡片路径
         self.cardNutWall = pygame.image.load('image/card/nutWall.png')
         self.cardPeashooter = pygame.image.load('image/card/peashooter.png')
-        self.cherry = pygame.image.load('image/card/cherry.png')
-        self.cactus = pygame.image.load('image/card/cactus.png')
         self.sunflower = pygame.image.load('image/card/sunflower.png')
-        self.cardPeashooterdouble = pygame.image.load('image/card/peashooterdouble.png')
+        self.cardsnowPea = pygame.image.load('images/card/snowpea.png')
+        self.cardspikeWeed = pygame.image.load('images/card/spikeweed.png')
         self.cardShovelBack = pygame.image.load('image/card/ShovelBack.png')
         self.cardShovel = pygame.image.load('image/card/Shovel.png')
 
         self.cardNutWallDark = pygame.image.load('image/card/nutdark.png')
         self.cardPeashooterDark = pygame.image.load('image/card/peashooterdark.png')
-        self.cherryDark = pygame.image.load('image/card/cherrydark.png')
-        self.cactusDark = pygame.image.load('image/card/cactusdark.png')
+        self.cardsnowPeaDark = pygame.image.load('images/card/snowpeadark.png')
+        self.cardspikeWeedDark = pygame.image.load('images/card/spikeweeddark.png')
         self.sunflowerDark = pygame.image.load('image/card/sunflowerdark.png')
-        self.cardPeashooterdoubleDark = pygame.image.load('image/card/peashooterdoubledark.png')
+        
 
         # 卡片图片缩放
         self.cardNutWall = pygame.transform.scale(self.cardNutWall, (55,68))
