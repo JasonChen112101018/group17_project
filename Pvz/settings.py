@@ -231,15 +231,14 @@ class Setting(object):
             pygame.image.load('image/mouseMoveCard/mouseNut.gif'),
             pygame.image.load('image/mouseMoveCard/mouseSunflower.gif'),
             pygame.image.load('image/mouseMoveCard/mousePeashooter.gif'),
-            pygame.image.load('image/mouseMoveCard/mouseCactus.png'),
-            pygame.image.load('image/mouseMoveCard/mouseCherry.gif'),
-            pygame.image.load('image/mouseMoveCard/repeater.gif'),
+            pygame.image.load('image/mouseMoveCard/mouseSnowPea.png'),
+            pygame.image.load('image/mouseMoveCard/mouseSpikeweed.gif'),
             self.cardShovel
         ]
 
         # 豌豆、仙人掌子弹贴图
         self.peaBulletImg = 'image/peaBullet.png'
-        self.cactusBulletImg = 'image/bullet_02.png'
+        self.snowPeaBulletImg = 'image/snowBullet.png'
         # 豌豆子弹碎裂
         self.bulletHitImg = pygame.image.load('image/PeaBulletHit.png')
         # 关于草地格子的坐标
@@ -258,7 +257,7 @@ class Setting(object):
 
         # 开始界面图片加载
         self.surface = pygame.image.load('image/Surface.jpg')
-        self.surface = pygame.transform.scale(self.surface, (1400,600))
+        self.surface = pygame.transform.scale(self.surface, (1600,900))
         self.beginBtn = pygame.image.load('image/beginBtn.png').subsurface(Rect((0, 0), (329, 148)))
         self.beginBtn = pygame.transform.scale(self.beginBtn, (500,200))
 
