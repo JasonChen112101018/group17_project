@@ -1,5 +1,5 @@
 from util.constant import Constant
-import settings
+import settings as Setting
 import pygame
 from util.loadimages import getImages
 import sun
@@ -9,7 +9,7 @@ from util.bus import Bus
 import random
 
 
-sets = Setting()
+sets = Setting
 # 當滑鼠被點即時啟用函數
 # 判斷滑鼠點擊卡片
 def cardMouseClickListener(bus):

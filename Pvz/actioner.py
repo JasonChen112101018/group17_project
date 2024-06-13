@@ -1,6 +1,6 @@
 import pygame
 import random
-from entity.sun import Sun
+from sun import Sun
 
 def sunAction(bus, screen, sets):
     for i in range(len(bus.sunFall)):
