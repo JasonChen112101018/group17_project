@@ -185,16 +185,12 @@ class Setting(object):
             plantsImgDir + 'SnowPea/',
         ]
         self.peashooterImg = plantsImgDir + 'Peashooter/'
-        self.cherryBombImg = plantsImgDir + 'CherryBomb/'
-        self.cherryBombBoomImg = plantsImgDir + 'CherryBombBoom/'
-        self.chomperImg = plantsImgDir + 'Chomper/'
-        self.chomperAttackImg = plantsImgDir + 'ChomperAttack/'
-        self.chomperDigestImg = plantsImgDir + 'ChomperDigest/'
         self.sunFlowerImg = plantsImgDir + 'SunFlower/'
         self.wallNutImg = plantsImgDir + 'WallNut/'
         self.wallNutCrackedImg = plantsImgDir + 'WallNutCracked/'
         self.wallNutBadlyCrackedImg = plantsImgDir + 'WallNutBadlyCracked/'
-        self.repeaterImg = plantsImgDir + 'Repeater/'
+        self.snowPeaImg = plantsImgDir + 'SnowPea/'
+        self.spikeWeed = plantsImgDir + 'Spikeweed/'
 
         # 加载卡片路径
         self.cardNutWall = pygame.image.load('image/card/nutWall.png')
