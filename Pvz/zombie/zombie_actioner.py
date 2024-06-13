@@ -1,6 +1,6 @@
 import random
 from zombie import Zombie_normal, Zombie_bucket, Zombie_head, Zombie_dead
-from plant import 
+from plant import Spikeweed
 from ..util import bus
 
 
@@ -54,7 +54,7 @@ def hitAction():
 # 殭屍吃植物
 def eat(zombie):
     for plant in bus.paintPlants:
-        if not isinstance(plant, CherryBomb) and not isinstance(zombie, Zombie_head) and not isinstance(zombie, Zombie_dead):
+        if not isinstance(plant, Spikeweed) and not isinstance(zombie, Zombie_head) and not isinstance(zombie, Zombie_dead):
             if plant.x + plant.width/2 == zb.x + 20 and zb.y + 100 < plant.y + 100 and zb.y + 100 > plant.y:
                 if zombie.life <= 3:
                     zombie.images = sets.zombieLostHeadAttackImages
@@ -73,8 +73,6 @@ def eat(zombie):
                     else:
                         if zombie.images == sets.normalAttackImages:
                             zombie.images = sets.zombie_normalImages
-                        elif zombie.images == sets.coneheadAttackImages:
-                            zombie.images = sets.zombie_coneheadImages
                         else:
                             zombie.images = sets.zombie_bucketImages
 
@@ -84,16 +82,18 @@ def hit(zombie):
     for bullet in bus.bullets:
         if zombie.hitBy(bullet) and not isinstance(zombie, Zombie_head) and not isinstance(zombie, Zombie_dead):
             zombie.life -= 1
-            # 豌豆不穿透，仙人掌刺穿透
             if bullet.type == 0:
                 # for i in range(100):
                 #     screen.blit(sets.bulletHitImg, (zombie.x-100, zombie.y))
                 bus.bullets.remove(bullet)
-
-            if zombie.life == 5:
+            elif bullet.type == 1:
+                zombie.life -= 1
+                zombie.x += 0.2
+                bus.bullets.remove(bullet)
+            if zombie.life <= 5 and zombie.life > 3 :
                 if not isinstance(zombie, Zombie_normal):
                     zombie.images = sets.zombie_normalImages
-            elif zombie.life == 3:
+            elif zombie.life <= 3 and zombie.life > 0 :
                 if zombie.headFlag is True:
                     zombie.images = sets.zombieLostHeadImages
                     bus.zombies.append(Zombie_head(screen, sets.zombieHeadImages, zombie.x, zombie.y))
