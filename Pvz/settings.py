@@ -1,10 +1,8 @@
-"""
-加载图片路径
-"""
+
 import pygame
 from  pygame.locals import *
 
-# 植物贴图的路径
+
 plantsImgDir = 'image/plants/'
 
 class Setting(object):
@@ -13,16 +11,16 @@ class Setting(object):
         self.background = pygame.image.load('image/background1.jpg')
         self.seedBank = pygame.image.load('image/SeedBank.png')
         self.sunImage = 'image/sun.png'
-        # 进度条   指示标   终点标
+        
         self.flagMeterEmpty = pygame.image.load('image/progress_bar/FlagMeterEmpty.png')
         self.flagMeterFull = pygame.image.load('image/progress_bar/FlagMeterFull.png')
         self.flagMeterParts1 = pygame.image.load('image/progress_bar/FlagMeterParts1.png')
         self.flagMeterParts2 = pygame.image.load('image/progress_bar/FlagMeterParts2.png')
-        # 提示标语
+        
         self.prepareGrowPlants = pygame.image.load('image/prompt_words/PrepareGrowPlants.png')
         self.largeWave = pygame.image.load('image/prompt_words/LargeWave.png')
         self.finalWave = pygame.image.load('image/prompt_words/FinalWave.png')
-        # 游戏状态
+        
         self.Button = pygame.image.load('image/game_state/Button.png')
         self.Pause = pygame.image.load('image/game_state/Pause.png')
 
@@ -51,30 +49,7 @@ class Setting(object):
             "image/zombie_normal/20.png",
             "image/zombie_normal/21.png"
         ]
-        # 帽子僵尸
-        self.zombie_coneheadImages = [
-            "image/zombie_conehead/0.png",
-            "image/zombie_conehead/1.png",
-            "image/zombie_conehead/2.png",
-            "image/zombie_conehead/3.png",
-            "image/zombie_conehead/4.png",
-            "image/zombie_conehead/5.png",
-            "image/zombie_conehead/6.png",
-            "image/zombie_conehead/7.png",
-            "image/zombie_conehead/8.png",
-            "image/zombie_conehead/9.png",
-            "image/zombie_conehead/10.png",
-            "image/zombie_conehead/11.png",
-            "image/zombie_conehead/12.png",
-            "image/zombie_conehead/13.png",
-            "image/zombie_conehead/14.png",
-            "image/zombie_conehead/15.png",
-            "image/zombie_conehead/16.png",
-            "image/zombie_conehead/17.png",
-            "image/zombie_conehead/18.png",
-            "image/zombie_conehead/19.png",
-            "image/zombie_conehead/20.png"
-        ]
+        
         # 铁桶僵尸
         self.zombie_bucketImages = [
             "image/zombie_bucket/0.png",
@@ -156,21 +131,6 @@ class Setting(object):
 
         ]
 
-        # 帽子僵尸碰撞图片
-        self.coneheadAttackImages = [
-            "image/zombie_coneheadAttack/0.png",
-            "image/zombie_coneheadAttack/1.png",
-            "image/zombie_coneheadAttack/2.png",
-            "image/zombie_coneheadAttack/3.png",
-            "image/zombie_coneheadAttack/4.png",
-            "image/zombie_coneheadAttack/5.png",
-            "image/zombie_coneheadAttack/6.png",
-            "image/zombie_coneheadAttack/7.png",
-            "image/zombie_coneheadAttack/8.png",
-            "image/zombie_coneheadAttack/9.png",
-            "image/zombie_coneheadAttack/10.png"
-
-        ]
         # 铁桶僵尸碰撞图片
         self.bucketAttackImages = [
             "image/zombie_bucketAttack/0.png",
@@ -221,10 +181,8 @@ class Setting(object):
             plantsImgDir + 'WallNut/',
             plantsImgDir + 'SunFlower/',
             plantsImgDir + 'Peashooter/',
-            plantsImgDir + 'Cactus/',
-            plantsImgDir + 'CherryBomb/',
-            plantsImgDir + 'Repeater/',
-            plantsImgDir + 'CherryBombBoom/',
+            plantsImgDir + 'Spikeweed/',
+            plantsImgDir + 'SnowPea/',
         ]
         self.peashooterImg = plantsImgDir + 'Peashooter/'
         self.cherryBombImg = plantsImgDir + 'CherryBomb/'
