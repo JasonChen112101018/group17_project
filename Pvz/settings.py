@@ -190,7 +190,7 @@ class Setting(object):
         self.wallNutCrackedImg = plantsImgDir + 'WallNutCracked/'
         self.wallNutBadlyCrackedImg = plantsImgDir + 'WallNutBadlyCracked/'
         self.snowPeaImg = plantsImgDir + 'SnowPea/'
-        self.spikeWeed = plantsImgDir + 'Spikeweed/'
+        self.spikeWeedImg = plantsImgDir + 'Spikeweed/'
 
         # load the card trail
         self.cardNutWall = pygame.image.load('image/card/nutWall.png')
