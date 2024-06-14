@@ -3,6 +3,7 @@ import pygame
 from  pygame.locals import *
 import zombie_actioner as zb
 
+
 # 開始遊戲界面
 def initStartSurface(bus, screen, sets):
     window_size = screen.get_size()
@@ -60,11 +61,11 @@ def initScenario(bus, screen, sets):
     screen.blit(sets.cardShovel, (444, 10))
 
     # 暫停按鈕
-    screen.blit(sets.Button, (1265, 10))
+    screen.blit(sets.Button, (900, 10))
     pygame.font.init()
     ft = pygame.font.Font('hiw.ttf', 28)
     Str = ft.render("Pause", True, (0, 0, 0))
-    screen.blit(Str, (1290, 14))
+    screen.blit(Str, (915, 14))
 
 # 陽光圖形
 def paintSun(bus, screen, sets):
@@ -87,29 +88,33 @@ def paintSunScore(bus, screen, sets):
 
 #進度條
 def painProgressBar(bus, screen, sets):
+
+    width, height = screen.get_size()
+    half_x = width / 2
+    half_y = height / 2
     # 進度條
     percentage = bus.globalTime / 100
 
     # 開始標語
-    if percentage <= 2 and percentage >= 1:
+    if percentage <= 3 and percentage >= 1:
         screen.blit(sets.prepareGrowPlants.subsurface(Rect((0, 0), (290, 120))), (550, 240))
 
-    if percentage >= 2 and percentage <= 3:
+    if percentage >= 3 and percentage <= 5:
         screen.blit(sets.prepareGrowPlants.subsurface(Rect((0, 120), (290, 100))), (550, 240))
 
-    if percentage >= 3 and percentage <= 4:
+    if percentage >= 5 and percentage <= 7:
         screen.blit(sets.prepareGrowPlants.subsurface(Rect((0, 212), (290, 120))), (550, 240))
     if not bus.midPercentage and 40 < percentage < 99 :
         bus.midPercentage = True
 
     # 一大波殭屍提示語
     if percentage >= 70 and percentage <= 80:
-        screen.blit(sets.largeWave, (525, 240))
+        screen.blit(sets.largeWave, (half_x - 250, half_y))
 
 
     # 最后一波提示語
     if percentage >= 143 and percentage <= 144:
-        screen.blit(sets.finalWave, (525, 240))
+        screen.blit(sets.finalWave, (half_x - 250, half_y))
         if not bus.finalPercentage:
             bus.finalPercentage = True
 
