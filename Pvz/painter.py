@@ -135,7 +135,7 @@ def deadPaint(bus, screen, sets):
     pygame.font.init()
     ft = pygame.font.Font('hiw.ttf', 45)
     Str = ft.render("Game Defeat", True, (255, 255, 255))
-    screen.blit(Str, (560, 255))
+    screen.blit(Str, (550, 255))
     # 結束
     screen.blit(sets.selectionBar, (555, 410))
     pygame.font.init()
