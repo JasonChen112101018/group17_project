@@ -60,7 +60,7 @@ def initScenario(bus, screen, sets):
     screen.blit(sets.Button, (1265, 10))
     pygame.font.init()
     ft = pygame.font.Font('hiw.ttf', 28)
-    Str = ft.render("暫 停", True, (0, 0, 0))
+    Str = ft.render("Pause", True, (0, 0, 0))
     screen.blit(Str, (1290, 14))
 
 # 陽光圖形
@@ -97,7 +97,6 @@ def painProgressBar(bus, screen, sets):
     if percentage >= 3 and percentage <= 4:
         screen.blit(sets.prepareGrowPlants.subsurface(Rect((0, 212), (255, 112))), (550, 240))
     if not bus.midPercentage and 40 < percentage < 99 :
-        bus.music.water()
         bus.midPercentage = True
 
     # 一大波殭屍提示語
@@ -128,7 +127,7 @@ def paintPause(bus, screen, sets):
     screen.blit(sets.Pause, (500, 0))
     pygame.font.init()
     ft = pygame.font.Font('hiw.ttf', 20)
-    Str = ft.render("請點擊滑鼠左鍵繼續", True, (255, 0, 0))
+    Str = ft.render("Press to continue", True, (255, 0, 0))
     screen.blit(Str, (562, 92))
 
 # 失敗畫面
@@ -136,7 +135,7 @@ def deadPaint(bus, screen, sets):
     screen.blit(sets.menuBar, (466, 100))
     pygame.font.init()
     ft = pygame.font.Font('hiw.ttf', 45)
-    Str = ft.render("遊 戲 失 敗", True, (255, 255, 255))
+    Str = ft.render("Game Defect", True, (255, 255, 255))
     screen.blit(Str, (560, 255))
     # 結束
     screen.blit(sets.selectionBar, (555, 410))
