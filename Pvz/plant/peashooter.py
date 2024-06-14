@@ -1,6 +1,6 @@
 import pygame
 from plant.Parentplant import Plant # 植物父類
-from settings import sets #圖片路徑
+from settings import Setting #圖片路徑
 from bullet import Bullet #子彈定義
 
 class Peashooter(Plant):
