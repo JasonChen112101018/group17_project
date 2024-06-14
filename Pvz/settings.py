@@ -231,8 +231,8 @@ class Setting(object):
             pygame.image.load('image/mouseMoveCard/mouseNut.gif'),
             pygame.image.load('image/mouseMoveCard/mouseSunflower.gif'),
             pygame.image.load('image/mouseMoveCard/mousePeashooter.gif'),
-            pygame.image.load('image/mouseMoveCard/mouseSnowPea.gif'),
             pygame.image.load('image/mouseMoveCard/mouseSpikeweed.gif'),
+            pygame.image.load('image/mouseMoveCard/mouseSnowPea.gif'),
             self.cardShovel
         ]
 
