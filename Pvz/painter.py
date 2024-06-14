@@ -29,6 +29,10 @@ def cardMovePaint(bus, screen, sets):
 
 #初始場景繪製
 def initScenario(bus, screen, sets):
+    width, height = screen.get_size()
+    half_x = width / 2
+    half_y = height / 2
+
     screen.blit(sets.background, (0, 0))
     screen.blit(sets.seedBank, (0, 0))
     # 顯示卡片
@@ -61,11 +65,11 @@ def initScenario(bus, screen, sets):
     screen.blit(sets.cardShovel, (444, 10))
 
     # 暫停按鈕
-    screen.blit(sets.Button, (900, 10))
+    screen.blit(sets.Button, (width - 150, 10))
     pygame.font.init()
     ft = pygame.font.Font('hiw.ttf', 28)
     Str = ft.render("Pause", True, (0, 0, 0))
-    screen.blit(Str, (915, 14))
+    screen.blit(Str, (width - 130, 14))
 
 # 陽光圖形
 def paintSun(bus, screen, sets):
@@ -131,7 +135,11 @@ def painProgressBar(bus, screen, sets):
 
 # 暫停標誌
 def paintPause(bus, screen, sets):
-    screen.blit(sets.Pause, (500, 0))
+    width, height = screen.get_size()
+    half_x = width / 2
+    half_y = height / 2
+
+    screen.blit(sets.Pause, (0, 0))
     pygame.font.init()
     ft = pygame.font.Font('hiw.ttf', 20)
     Str = ft.render("Press to continue", True, (255, 0, 0))
