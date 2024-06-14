@@ -11,7 +11,7 @@ import zombie.zombie_painter as z_painter
 import plant.Plantpainter as plantpainter
 import plant
 
-screen = pygame.display.set_mode((1600, 600), 0, 0)
+screen = pygame.display.set_mode((1100, 600), 0, 0)
 
 sets = Setting()
 bus = Bus()
