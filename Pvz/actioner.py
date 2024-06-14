@@ -1,6 +1,9 @@
 import pygame
 import random
 from sun import Sun
+from util.bus import Bus
+
+bus = Bus()
 
 def sunAction(bus, screen, sets):
     for i in range(len(bus.sunFall)):
