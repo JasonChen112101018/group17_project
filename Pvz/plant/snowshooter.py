@@ -15,8 +15,8 @@ class Snowshooter(Plant):
         self.width = 0
         self.height = 0
         self.index = 0
-        self.life = 100
-        self.sunshine = 100
+        self.life = 150
+        self.sunshine = 175
         self.attack = 50
         self.interval = 150
         self.cd = 10
@@ -25,7 +25,7 @@ class Snowshooter(Plant):
     def step(self, bus, screen, sets):
         self.index += 1
         if self.index == self.interval:
-            bus.bullets.append(self.shootBy(screen, sets.peaBulletImg))
+            bus.bullets.append(self.shootBy(screen, sets.snowPeaBulletImg))
             self.index = 0
         ix = self.index / 7 % len(self.images)
         self.image = self.images[int(ix)]
