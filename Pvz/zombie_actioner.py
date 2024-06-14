@@ -87,8 +87,8 @@ def eat(zombie):
 # 殭屍被攻擊
 def hit(zombie):
     if isinstance(bus.paintPlants, Spikeweed):
-        if abs((plant.x + plant.width/2) - (zombie.x + 20)) < 10 and zombie.y + 100 < plant.y + 100 and zombie.y + 100 > plant.y :
-                zombie.life -= 10
+        if abs((Spikeweed.x + Spikeweed.width/2) - (zombie.x + 20)) < 10 and zombie.y + 100 < Spikeweed.y + 100 and zombie.y + 100 > Spikeweed.y :
+                zombie.life -= 10000
                 zombie.x += 0.2
                 if zombie.life <= 3:
                     zombie.images = sets.zombieLostHeadAttackImages
