@@ -1,7 +1,7 @@
 import abc
 
 
-class ZombieObject(object):
+class ParentZombie(object):
     def __init__(self, screen, x, y, image, life, damage):
         self.screen = screen
         self.x = x
