@@ -114,7 +114,7 @@ def painProgressBar(bus, screen, sets):
 
     # 最后一波提示語
     if percentage >= 143 and percentage <= 144:
-        screen.blit(sets.finalWave, (half_x - 250, half_y))
+        screen.blit(sets.finalWave, (half_x -100, half_y))
         if not bus.finalPercentage:
             bus.finalPercentage = True
 
@@ -122,12 +122,12 @@ def painProgressBar(bus, screen, sets):
     screen.blit(sets.flagMeterFull, (1200, 560))
 
     if percentage <= 145:
-        screen.blit(sets.flagMeterEmpty.subsurface(Rect((0, 0), (157 - percentage, 21))), (1200, 560))
-        screen.blit(sets.flagMeterParts1, (1340 - percentage, 560))
+        screen.blit(sets.flagMeterEmpty.subsurface(Rect((0, 0), (157 - percentage, 21))), (width-20, height-30))
+        screen.blit(sets.flagMeterParts1, (width - 20 - percentage, height - 20))
     else:
-        screen.blit(sets.flagMeterParts1, (1340 - 145, 560))
+        screen.blit(sets.flagMeterParts1, (width - 145, height-30))
 
-    screen.blit(sets.flagMeterParts2, (1205, 557))
+    screen.blit(sets.flagMeterParts2, (width - 20 , height - 20))
 
 # 暫停標誌
 def paintPause(bus, screen, sets):
