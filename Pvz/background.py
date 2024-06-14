@@ -7,6 +7,9 @@ from util.bus import Bus
 from sun import Sun
 import zombie 
 #import Zombie_normal, Zombie_bucket, Zombie_head, Zombie_dead
+import zombie_actioner as z_actioner
+import zombie.zombie_painter as z_painter
+import plant.Plantpainter as plantpainter
 import plant
 #import Sun
 
@@ -33,10 +36,10 @@ def paint():
 
     # 判斷是否需要繪製背景
     painter.initScenario(bus, screen, sets)
-    paintZombies()
+    z_painter.paintZombies()
     painter.cardMovePaint(bus, screen, sets)
-    paintPlants()
-    paintBullets()
+    plantpainter.paintPlants()
+    plantpainter.paintBullets()
 
     # 繪製下落及在地上的太陽
     painter.paintSun(bus, screen, sets)
@@ -65,18 +68,16 @@ def action():
             mouseListener.sunMouseClickListener(bus, screen, sets)
             mouseListener.runOrPause(bus, screen, sets)
     if bus.state == bus.RUNNING:
-        stepAction()
-        zombiesAction()
+        z_actioner.stepAction()
+        z_actioner.zombiesAction()
         # 陽光的行動
         actioner.sunAction(bus, screen, sets)
         # 全局時間軸增加
         bus.globalTime += 1
         for plant in bus.paintPlants:
             plant.step(bus, screen, sets)
-        hitAction()
+        z_actioner.hitAction()
         actioner.endAction(bus, screen, sets)
 
-# 子彈超出邊界
-        if bullet.outOfBounds():
-            bus.bullets.remove(bullet)
+
 
