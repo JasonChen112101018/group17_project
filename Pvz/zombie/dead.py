@@ -1,7 +1,7 @@
 import pygame
-from zombie.Parentzombie import Parentzombie
+from zombie.Parentzombie import ParentZombie
 
-class Zombie_dead(Parentzombie):
+class Zombie_dead(ParentZombie):
     def __init__(self, screen, images, x, y):
         self.screen = screen
         self.images = images
