@@ -108,7 +108,6 @@ def painProgressBar(bus, screen, sets):
     if percentage >= 143 and percentage <= 144:
         screen.blit(sets.finalWave, (525, 240))
         if not bus.finalPercentage:
-            bus.music.urgent()
             bus.finalPercentage = True
 
 
