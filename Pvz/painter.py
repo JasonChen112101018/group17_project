@@ -5,8 +5,11 @@ import zombie_actioner as zb
 
 # 開始遊戲界面
 def initStartSurface(bus, screen, sets):
-    screen.blit(sets.surface, (0,0))
-    screen.blit(sets.beginBtn, (740,100))
+    window_size = screen.get_size()
+    scaled_surface = pygame.transform.scale(sets.surface, window_size)
+    scaled_beginBtn = pygame.transform.scale(sets.beginBtn, (300, 200))
+    screen.blit(scaled_surface, (0,0))
+    screen.blit(scaled_beginBtn, (600,100))
 
 # 滑鼠拖曳植物
 def cardMovePaint(bus, screen, sets):
