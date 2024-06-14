@@ -1,15 +1,22 @@
 from util.constant import Constant
-import settings as Setting
+from settings import Setting
 import pygame
 from util.loadimages import getImages
-import sun
-import plant
+from sun import Sun
+
+from plant.wallnut import Wallnut
+from plant.sunflower import Sunflower
+from plant.peashooter import Peashooter
+from plant.snowshooter import Snowshooter
+from plant.spikeweed import Spikeweed
 import sys
 from util.bus import Bus
+
+
 import random
 
 
-sets = Setting
+sets = Setting()
 # 當滑鼠被點即時啟用函數
 # 判斷滑鼠點擊卡片
 def cardMouseClickListener(bus):
@@ -88,7 +95,7 @@ def initPlantsMouseClickListener(bus, screen):
                 Sunflower(screen, plantX, plantY, getImages(sets.plantsInitImages[1])),
                 Peashooter(screen, plantX, plantY, getImages(sets.plantsInitImages[2])),
                 Spikeweed(screen, plantX, plantY, getImages(sets.plantsInitImages[3])),
-                Snowpea(screen, plantX, plantY, getImages(sets.plantsInitImages[4]), bus),
+                Snowshooter(screen, plantX, plantY, getImages(sets.plantsInitImages[4])),
             ]
             if bus.cardState == Constant.CARD_CLICKED and bus.cardSelection in imagedict:
                 index = imagedict[bus.cardSelection]
