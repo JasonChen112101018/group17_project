@@ -18,7 +18,7 @@ class Zombie_bucket(ParentZombie):
     def step(self, sets):
         # 1.移動
         if self.images == sets.zombie_bucketImages or self.images == sets.zombieLostHeadImages or self.images == sets.zombie_normalImages:
-            self.x -= 0.2
+            self.x -= 0.1
         # 2.走路動畫
         self.index += 1
         ix = self.index / (len(self.images)/2) % len(self.images)
