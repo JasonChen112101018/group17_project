@@ -52,7 +52,7 @@ def hitAction():
             if zombie.headFlag is True:
                 zombie.images = sets.zombieLostHeadImages
                 zombie.headFlag = False
-        elif zombie.life == 0:
+        elif zombie.life <= 0:
             bus.zombies.remove(zombie)
             zombies_killed += 1  # Increment counter when zombie dies
 
@@ -94,7 +94,7 @@ def eat(zombie):
                         bus.zombies.append(Zombie_head(screen, sets.zombieHeadImages, zombie.x, zombie.y))
                 elif zombie.life <= 0:
                     bus.zombies.append(Zombie_dead(screen, sets.zombieDieImages, zombie.x, zombie.y))
-                    zombies_killed += 1  # Increment counter when zombie dies
+                    #zombies_killed += 1  # Increment counter when zombie dies
 
 # 殭屍被攻擊
 def hit(zombie):
@@ -117,6 +117,7 @@ def hit(zombie):
                     bus.zombies.append(Zombie_head(screen, sets.zombieHeadImages, zombie.x, zombie.y))
             elif zombie.life <= 0:
                 bus.zombies.append(Zombie_dead(screen, sets.zombieDieImages, zombie.x, zombie.y))
+        
                 
 
 
