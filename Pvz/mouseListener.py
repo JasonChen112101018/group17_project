@@ -94,7 +94,7 @@ def initPlantsMouseClickListener(bus, screen):
                 Wallnut(screen, plantX, plantY, getImages(sets.plantsInitImages[0])),
                 Sunflower(screen, plantX, plantY, getImages(sets.plantsInitImages[1])),
                 Peashooter(screen, plantX, plantY, getImages(sets.plantsInitImages[2])),
-                Spikeweed(screen, plantX, plantY, getImages(sets.plantsInitImages[3])),
+                Spikeweed(screen, plantX, plantY+40, getImages(sets.plantsInitImages[3])),
                 Snowshooter(screen, plantX, plantY, getImages(sets.plantsInitImages[4])),
             ]
             if bus.cardState == Constant.CARD_CLICKED and bus.cardSelection in imagedict:
@@ -117,7 +117,7 @@ def initPlantsMouseClickListener(bus, screen):
             bus.cardState = Constant.CARD_NOT_CLICKED
 
 def sunMouseClickListener(bus, screen, sets):
-        # 撿太陽  中左键   返回 True  False
+        # 用中左鍵撿太陽並返回TrueorFalse
         leftFlag = pygame.mouse.get_pressed()[0]
 
         mouseX, mouseY = pygame.mouse.get_pos()
