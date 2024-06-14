@@ -60,7 +60,7 @@ def eat(zombie):
     for plant in bus.paintPlants:
         if not isinstance(plant, Spikeweed) and not isinstance(zombie, Zombie_head) and not isinstance(zombie, Zombie_dead):
             # Improved horizontal collision check
-            if abs((plant.x + plant.width/2) - (zombie.x + 20)) < 10 and zombie.y + 100 < plant.y + 100 and zombie.y + 100 > plant.y:
+            if abs((plant.x + plant.width/2) - (zombie.x + 20)) < 10 and zombie.y < plant.y and zombie.y + 100 > plant.y:
                 if zombie.life <= 3:
                     zombie.images = sets.zombieLostHeadAttackImages
                 elif zombie.life <= 5:
@@ -80,24 +80,23 @@ def eat(zombie):
                             zombie.images = sets.zombie_normalImages
                         else:
                             zombie.images = sets.zombie_bucketImages
-
-
+        elif isinstance(plant, Spikeweed):
+            if abs((plant.x + plant.width/2) - (zombie.x + 20)) < 10 and zombie.y < plant.y - 40 and zombie.y + 140  > plant.y:
+                zombie.life -= 1
+                zombie.x += 0.05
+                if zombie.life > 3:
+                    if not isinstance(zombie, Zombie_normal):
+                        zombie.images = sets.zombie_normalImages
+                elif zombie.life <= 3 and zombie.life > 0:
+                    if zombie.headFlag is True:
+                        zombie.images = sets.zombieLostHeadImages
+                        bus.zombies.append(Zombie_head(screen, sets.zombieHeadImages, zombie.x, zombie.y))
+                elif zombie.life <= 0:
+                    bus.zombies.append(Zombie_dead(screen, sets.zombieDieImages, zombie.x, zombie.y))
 
 
 # 殭屍被攻擊
 def hit(zombie):
-    if isinstance(bus.paintPlants, Spikeweed):
-        if abs((Spikeweed.x + Spikeweed.width/2) - (zombie.x + 20)) < 10 and zombie.y + 100 < Spikeweed.y + 100 and zombie.y + 100 > Spikeweed.y :
-                zombie.life -= 10000
-                zombie.x += 0.2
-                if zombie.life <= 3:
-                    zombie.images = sets.zombieLostHeadAttackImages
-                elif zombie.life <= 5:
-                    zombie.images = sets.normalAttackImages
-                elif zombie.life <= 8:
-                    zombie.images = sets.bucketAttackImages
-                else:
-                    zombie.images = sets.bucketAttackImages
     for bullet in bus.bullets:
         if zombie.hitBy(bullet) and not isinstance(zombie, Zombie_head) and not isinstance(zombie, Zombie_dead):
             zombie.life -= 1
@@ -116,6 +115,6 @@ def hit(zombie):
                 if zombie.headFlag is True:
                     zombie.images = sets.zombieLostHeadImages
                     bus.zombies.append(Zombie_head(screen, sets.zombieHeadImages, zombie.x, zombie.y))
-            elif zombie.life == 0:
+            elif zombie.life <= 0:
                 bus.zombies.append(Zombie_dead(screen, sets.zombieDieImages, zombie.x, zombie.y))
 
