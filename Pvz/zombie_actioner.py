@@ -69,7 +69,7 @@ def eat(zombie):
                     zombie.images = sets.bucketAttackImages
                 else:
                     zombie.images = sets.bucketAttackImages
-                plant.life -= 0.5
+                plant.life -= 0.2
                 if plant.life <= 0:
                     bus.gridList[plant.gridX][plant.gridY] = -1
                     bus.paintPlants.remove(plant)
@@ -83,7 +83,7 @@ def eat(zombie):
         elif isinstance(plant, Spikeweed):
             if abs((plant.x + plant.width/2) - (zombie.x + 20)) < 10 and zombie.y < plant.y - 40 and zombie.y + 140  > plant.y:
                 zombie.life -= 1
-                zombie.x += 0.05
+                zombie.x += 0.09
                 if zombie.life > 3:
                     if not isinstance(zombie, Zombie_normal):
                         zombie.images = sets.zombie_normalImages
@@ -101,12 +101,10 @@ def hit(zombie):
         if zombie.hitBy(bullet) and not isinstance(zombie, Zombie_head) and not isinstance(zombie, Zombie_dead):
             zombie.life -= 1
             if bullet.type == 0:
-                # for i in range(100):
-                #     screen.blit(sets.bulletHitImg, (zombie.x-100, zombie.y))
                 bus.bullets.remove(bullet)
             elif bullet.type == 1:
                 zombie.life -= 1
-                zombie.x += 0.2
+                zombie.x += 0.09
                 bus.bullets.remove(bullet)
             if zombie.life <= 5 and zombie.life > 3 :
                 if not isinstance(zombie, Zombie_normal):
