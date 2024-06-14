@@ -25,7 +25,7 @@ def zombiesAction():
     bus.zombieIndex += 1
     if 7000 <= bus.globalTime <= 8000 or 14200 <= bus.globalTime <= 14400:
         bus.zombieRate = 10
-    else:
+    elif bus.globalTime <= 14200:
         bus.zombieRate = 1000
 
     if bus.globalTime == 14300:
