@@ -13,7 +13,7 @@ import plant.Plantpainter as plantpainter
 import plant
 #import Sun
 
-screen = pygame.display.set_mode((1400, 600), 0, 0)
+screen = pygame.display.set_mode((1050, 600), 0, 0)
 
 sets = Setting()
 bus = Bus()
