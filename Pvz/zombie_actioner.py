@@ -23,9 +23,9 @@ def stepAction():
 def zombiesAction():
     bus.zombieIndex += 1
     if 7000 <= bus.globalTime <= 8000 or 14200 <= bus.globalTime <= 14400:
-        bus.zombieRate = 50
+        bus.zombieRate = 10
     else:
-        bus.zombieRate = 500
+        bus.zombieRate = 1000
 
     if bus.globalTime == 14300:
         bus.zombies.append(Zombie_bucket(screen, sets.zombie_bucketImages))
@@ -87,9 +87,8 @@ def eat(zombie):
 # 殭屍被攻擊
 def hit(zombie):
     if isinstance(bus.paintPlants, Spikeweed):
-        if plant.x + plant.width/2 >= zb.x  and plant.x - plant.width/2 <= zb.x: 
-            if zb.y + 100 < plant.y + 100 and zb.y + 100 > plant.y:
-                zombie.life -= 0.5
+        if abs((plant.x + plant.width/2) - (zombie.x + 20)) < 10 and zombie.y + 100 < plant.y + 100 and zombie.y + 100 > plant.y :
+                zombie.life -= 10
                 zombie.x += 0.2
                 if zombie.life <= 3:
                     zombie.images = sets.zombieLostHeadAttackImages
