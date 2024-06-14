@@ -9,7 +9,7 @@ from settings import Setting
 
 bus = Bus()
 sets = Setting()
-screen = pygame.display.set_mode((1400, 600), 0, 0)
+screen = pygame.display.set_mode((1600, 900), 0, 0)
 # 走一步
 def stepAction():
     # 殭屍走一步
@@ -59,7 +59,8 @@ def hitAction():
 def eat(zombie):
     for plant in bus.paintPlants:
         if not isinstance(plant, Spikeweed) and not isinstance(zombie, Zombie_head) and not isinstance(zombie, Zombie_dead):
-            if plant.x + plant.width/2 == zombie.x + 20 and zombie.y + 100 < plant.y + 100 and zombie.y + 100 > plant.y:
+            # Improved horizontal collision check
+            if abs((plant.x + plant.width/2) - (zombie.x + 20)) < 10 and zombie.y + 100 < plant.y + 100 and zombie.y + 100 > plant.y:
                 if zombie.life <= 3:
                     zombie.images = sets.zombieLostHeadAttackImages
                 elif zombie.life <= 5:
@@ -69,7 +70,7 @@ def eat(zombie):
                 else:
                     zombie.images = sets.bucketAttackImages
                 plant.life -= 0.5
-                if plant.life == 0:
+                if plant.life <= 0:
                     bus.gridList[plant.gridX][plant.gridY] = -1
                     bus.paintPlants.remove(plant)
                     if zombie.images == sets.zombieLostHeadAttackImages:
@@ -79,6 +80,8 @@ def eat(zombie):
                             zombie.images = sets.zombie_normalImages
                         else:
                             zombie.images = sets.zombie_bucketImages
+
+
 
 
 # 殭屍被攻擊
