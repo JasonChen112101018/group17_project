@@ -49,9 +49,9 @@ def initScenario(bus, screen, sets):
     
     for i in range(len(sun_requirements)):
         if bus.sunScore >= sun_requirements[i]:
-            screen.blit(card_dict[i], (80 + CARD_OFFSET * i, 10))
+            screen.blit(dict[i], (80 + CARD_OFFSET * i, 10))
         else:
-            screen.blit(card_dict_dark[i], (80 + CARD_OFFSET * i, 10))
+            screen.blit(dictDark[i], (80 + CARD_OFFSET * i, 10))
     
     screen.blit(sets.cardShovelBack, (448, 0))
     screen.blit(sets.cardShovel, (444, 10))
