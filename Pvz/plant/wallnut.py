@@ -1,5 +1,5 @@
 from plant.Parentplant import Plant
-from settings import sets
+from settings import Setting
 from util.loadimages import getImages
 
 class Wallnut(Plant):
