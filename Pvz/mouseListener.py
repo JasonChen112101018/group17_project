@@ -3,7 +3,6 @@ from settings import Setting
 import pygame
 from util.loadimages import getImages
 from sun import Sun
-
 from plant.wallnut import Wallnut
 from plant.sunflower import Sunflower
 from plant.peashooter import Peashooter
@@ -11,12 +10,10 @@ from plant.snowshooter import Snowshooter
 from plant.spikeweed import Spikeweed
 import sys
 from util.bus import Bus
-
-
 import random
 
-
 sets = Setting()
+
 # 當滑鼠被點即時啟用函數
 # 判斷滑鼠點擊卡片
 def cardMouseClickListener(bus):
