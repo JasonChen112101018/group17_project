@@ -1,7 +1,7 @@
 import pygame
-from conf.settings import Setting #圖片路徑
+from settings import Setting #圖片路徑
 from plant.Parentplant import Plant #植物父類
-from entity.sun import Sun #太陽
+from sun import Sun #太陽
 from util.bus import Bus #全局狀態
 
 sets = Setting()
