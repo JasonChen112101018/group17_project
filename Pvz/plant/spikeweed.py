@@ -1,5 +1,5 @@
 from plant.Parentplant import Plant
-from settings import sets
+from settings import Setting
 from util.loadimages import getImages
 
 class Spikeweed(Plant):
@@ -11,7 +11,7 @@ class Spikeweed(Plant):
         self.image = images[0]
         self.width = 0
         self.height = 0
-        super(Spileweed, self).__init__(screen, self.x, self.y, self.image)
+        super(Spikeweed, self).__init__(screen, self.x, self.y, self.image)
 
         self.index = 0
         self.life = 100
