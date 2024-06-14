@@ -256,7 +256,7 @@ class Setting(object):
         self.rightX = self.gridXIndexes[9]
 
         # start the surface load
-        self.surface = pygame.image.load('image/Surface.jpg')
+        self.surface = pygame.image.load('image/Welcome.png')
         self.surface = pygame.transform.scale(self.surface, (1400,600))
         self.beginBtn = pygame.image.load('image/beginBtn.png').subsurface(Rect((0, 0), (329, 148)))
         self.beginBtn = pygame.transform.scale(self.beginBtn, (500,200))
