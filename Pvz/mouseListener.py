@@ -122,7 +122,7 @@ def sunMouseClickListener(bus, screen, sets):
 
         mouseX, mouseY = pygame.mouse.get_pos()
 
-        # 判斷滑鼠點擊到了材料
+        # 判斷滑鼠點擊到了太陽
         for i in range(len(bus.sunFall)):
             if leftFlag and mouseX > bus.sunFall[i].x and mouseX < bus.sunFall[i].x + bus.sunFall[i].width and \
                     mouseY > bus.sunFall[i].y and mouseY < bus.sunFall[i].y + bus.sunFall[i].height:
