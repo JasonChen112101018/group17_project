@@ -17,7 +17,7 @@ def sunAction(bus, screen, sets):
     #陽光消失
     for i in range(len(bus.sunStay)):
         bus.sunStay[i].disappearTime += 1
-        if bus.sunStay[i].disappearTime == 200:
+        if bus.sunStay[i].disappearTime == 300:
             del bus.sunStay[i]
             break
 
