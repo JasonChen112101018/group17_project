@@ -13,8 +13,6 @@ import plant.Plantpainter as plantpainter
 import plant
 #import Sun
 
-
-#生成太陽
 screen = pygame.display.set_mode((1400, 600), 0, 0)
 
 sets = Setting()
