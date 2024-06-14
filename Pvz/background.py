@@ -6,14 +6,12 @@ from settings import Setting
 from util.bus import Bus
 from sun import Sun
 import zombie 
-#import Zombie_normal, Zombie_bucket, Zombie_head, Zombie_dead
 import zombie_actioner as z_actioner
 import zombie.zombie_painter as z_painter
 import plant.Plantpainter as plantpainter
 import plant
-#import Sun
 
-screen = pygame.display.set_mode((1050, 600), 0, 0)
+screen = pygame.display.set_mode((1600, 600), 0, 0)
 
 sets = Setting()
 bus = Bus()
