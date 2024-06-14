@@ -45,7 +45,7 @@ def initScenario(bus, screen, sets):
         4: sets.cardsnowPeaDark,
     }
     
-    sun_requirements = [50, 50, 100, 100, 125]
+    sun_requirements = [50, 50, 100, 100, 175]
     
     for i in range(len(sun_requirements)):
         if bus.sunScore >= sun_requirements[i]:
@@ -134,13 +134,13 @@ def deadPaint(bus, screen, sets):
     screen.blit(sets.menuBar, (466, 100))
     pygame.font.init()
     ft = pygame.font.Font('hiw.ttf', 45)
-    Str = ft.render("Game Defect", True, (255, 255, 255))
+    Str = ft.render("Game Defeat", True, (255, 255, 255))
     screen.blit(Str, (560, 255))
     # 結束
     screen.blit(sets.selectionBar, (555, 410))
     pygame.font.init()
     ft = pygame.font.Font('hiw.ttf', 32)
-    Str = ft.render("結  束", True, (60, 60, 60))
+    Str = ft.render("exit", True, (60, 60, 60))
     screen.blit(Str, (628, 417))
 
 def restartPaint(bus, screen, sets):
