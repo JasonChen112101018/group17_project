@@ -123,15 +123,23 @@ def painProgressBar(bus, screen, sets):
             bus.finalPercentage = True
 
 
-    screen.blit(sets.flagMeterFull, (1200, 560))
+    screen.blit(sets.flagMeterFull, (width-160, height-25))
 
     if percentage <= 145:
-        screen.blit(sets.flagMeterEmpty.subsurface(Rect((0, 0), (157 - percentage, 21))), (width-20, height-30))
-        screen.blit(sets.flagMeterParts1, (width - 20 - percentage, height - 20))
-    else:
-        screen.blit(sets.flagMeterParts1, (width - 145, height-30))
+        screen.blit(sets.flagMeterEmpty.subsurface(Rect((0, 0), (157 - percentage, 21))), (width-160, height-25))
+       # screen.blit(sets.flagMeterParts1, (width - 20 - percentage, height - 25))
+        screen.blit(sets.flagMeterParts2, (width - 5 - percentage, height - 35))
+        screen.blit(sets.flagMeterParts1, (width - 20 - percentage, height - 25))
 
-    screen.blit(sets.flagMeterParts2, (width - 20 , height - 20))
+
+    else:
+       # screen.blit(sets.flagMeterParts1, (width - 145, height - 30))
+        screen.blit(sets.flagMeterParts2, (width - 150, height - 35))
+        screen.blit(sets.flagMeterParts1, (width - 165, height - 25))
+
+
+
+    #screen.blit(sets.flagMeterParts2, (width - 20 , height - 30))
 
 # 暫停標誌
 def paintPause(bus, screen, sets):
