@@ -107,7 +107,7 @@ def painProgressBar(bus, screen, sets):
         screen.blit(sets.prepareGrowPlants.subsurface(Rect((0, 120), (290, 100))), (440, 240))
 
     if percentage >= 5 and percentage <= 7:
-        screen.blit(sets.prepareGrowPlants.subsurface(Rect((0, 212), (290, 120))), (550, 240))
+        screen.blit(sets.prepareGrowPlants.subsurface(Rect((0, 212), (290, 120))), (440, 240))
     if not bus.midPercentage and 40 < percentage < 99 :
         bus.midPercentage = True
 
