@@ -197,8 +197,9 @@ def hit(zombie):
         if zombie.hitBy(bullet) and not isinstance(zombie, Zombie_head) and not isinstance(zombie, Zombie_dead):
             zombie.life -= 1
             if bullet.type == 0:
-                # for i in range(100):
-                #     screen.blit(sets.bulletHitImg, (zombie.x-100, zombie.y))
+                bus.bullets.remove(bullet)
+            elif bullet.type == 1:
+                zombie.x += 10
                 bus.bullets.remove(bullet)
 
             if zombie.life == 5:

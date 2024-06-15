@@ -32,5 +32,5 @@ class Snowshooter(Plant):
 
     # 子彈生成
     def shootBy(self, screen, image):
-        bs = Bullet(screen, image, self.x + 55, self.y, 0)
+        bs = Bullet(screen, image, self.x + 55, self.y, 1)
         return bs
