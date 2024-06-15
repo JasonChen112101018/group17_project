@@ -82,7 +82,7 @@ action部分
 # 事件函數
 def action():
 
-    # 滑鼠事件i
+    # 滑鼠事件
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             sys.exit()
@@ -94,7 +94,7 @@ def action():
     if bus.state == bus.RUNNING:
         stepAction()
         zombiesAction()
-        # 阳光的动作
+        #  陽光動作
         actioner.sunAction(bus, screen, sets)
         # 控制全局的时间轴时间增加
         bus.globalTime += 1
