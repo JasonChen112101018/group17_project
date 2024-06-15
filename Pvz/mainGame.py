@@ -148,7 +148,7 @@ def hitAction():
         elif zombie.life == 0:
             bus.zombies.remove(zombie)
 
-# 殭屍i吃植物
+# 殭屍吃植物
 def eat(zb):
     for plant in bus.paintPlants:
         if not isinstance(plant, Spikeweed) and not isinstance(zb, Zombie_head) and not isinstance(zb, Zombie_dead):
@@ -184,7 +184,7 @@ def eat(zb):
                     bus.zombies.append(Zombie_dead(screen, sets.zombieDieImages, zb.x, zb.y))
 
 
-# 僵尸被攻击
+# 殭屍被攻击
 def hit(zombie):
     for bullet in bus.bullets:
         if zombie.hitBy(bullet) and not isinstance(zombie, Zombie_head) and not isinstance(zombie, Zombie_dead):
