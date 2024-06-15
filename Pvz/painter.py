@@ -159,8 +159,8 @@ def deadPaint(bus, screen, sets):
     screen.blit(scaled_menuBar, (half_x - (scaled_x_image/2), height - (scaled_y_image)))
     pygame.font.init()
     ft = pygame.font.Font('hiw.ttf', 45)
-    Str = ft.render("Game Defeat", True, (255, 255, 255))
-    screen.blit(Str, (550, 255))
+    Str = ft.render("Game Defeat", True, (0, 195, 0))
+    screen.blit(Str, (half_x - (scaled_x_image/3), height - (scaled_y_image)+150) )
     #Str = ft.render("Score:"+ str(5*(zb.zombies_killed)), True, (255, 255, 255))
     #screen.blit(Str, (550, 310))
     # 結束
@@ -178,14 +178,20 @@ def restartPaint(bus, screen, sets):
     screen.blit(Str, (605, 346))
 
 def wonPaint(bus, screen, sets):
-    screen.blit(sets.menuBar, (466, 100))
+    width, height = screen.get_size()
+    half_x = width / 2
+    half_y = height / 2
+    x_image , y_image = sets.menuBar.get_size()
+    scaled_menuBar = pygame.transform.scale(sets.menuBar, (x_image*0.8, y_image*0.8))
+    scaled_x_image, scaled_y_image = scaled_menuBar.get_size()
+    screen.blit(scaled_menuBar, (half_x - (scaled_x_image/3), height - (scaled_y_image)))
     pygame.font.init()
     ft = pygame.font.Font('hiw.ttf', 45)
-    Str = ft.render("闖 關 成 功", True, (255, 255, 255))
-    screen.blit(Str, (560, 255))
+    Str = ft.render("You Win", True, (0, 195, 0))
+    screen.blit(Str, (half_x - (scaled_x_image/3)+125, height - (scaled_y_image)+150))
     # 結束
-    screen.blit(sets.selectionBar, (555, 410))
-    pygame.font.init()
-    ft = pygame.font.Font('hiw.ttf', 32)
-    Str = ft.render("結  束", True, (60, 60, 60))
-    screen.blit(Str, (628, 417))
+    #screen.blit(sets.selectionBar, (555, 410))
+    #pygame.font.init()
+    #ft = pygame.font.Font('hiw.ttf', 32)
+    #Str = ft.render("", True, (60, 60, 60))
+    #screen.blit(Str, (628, 417))
