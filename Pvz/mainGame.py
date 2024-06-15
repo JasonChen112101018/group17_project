@@ -46,7 +46,7 @@ def paint():
 
     # 繪製太陽
     painter.paintSun(bus, screen, sets)
-    # 绘制太阳总分数状态
+    # 繪製太陽數量
     painter.paintSunScore(bus, screen, sets)
     # 绘制进度条
     painter.painProgressBar(bus, screen, sets)
