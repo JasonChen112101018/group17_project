@@ -27,9 +27,10 @@ class Peashooter(Plant):
     # 植物晃動
     def step(self, bus, screen, sets):
         self.index += 1
-        if self.index == self.interval and self.zombieflag == 1:
-            bus.bullets.append(self.shootBy(screen, sets.peaBulletImg))
+        if self.index == self.interval:
             self.index = 0
+            if self.zombieflag():
+                bus.bullets.append(self.shootBy(screen, sets.peaBulletImg))
         ix = self.index / 7 % len(self.images)
         self.image = self.images[int(ix)]
 
