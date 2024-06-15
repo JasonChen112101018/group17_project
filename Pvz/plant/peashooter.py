@@ -32,5 +32,6 @@ class Peashooter(Plant):
 
     # 子彈生成
     def shootBy(self, screen, image):
-        bs = Bullet(screen, image, self.x + 55, self.y, 0)
-        return bs
+        if zombie.x < 950 and abs(self.y - zombie.y) < 15:
+            bs = Bullet(screen, image, self.x + 55, self.y, 0)
+            return bs

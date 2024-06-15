@@ -145,7 +145,7 @@ def zombiesAction():
     if 7000 <= bus.globalTime <= 8000:
         bus.zombieRate = 100
     elif 13500 <= bus.globalTime <= 14400:
-        bus.zombieRate = 50
+        bus.zombieRate = 100
         bus.speed *= 1000
     else:
         bus.zombieRate = 1000
