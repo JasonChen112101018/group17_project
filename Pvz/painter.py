@@ -146,7 +146,7 @@ def paintPause(bus, screen, sets):
     pygame.font.init()
     ft = pygame.font.Font('hiw.ttf', 20)
     Str = ft.render("Press to continue", True, (255, 0, 0))
-    screen.blit(Str, (half_x - x_image/2 +50  , 85))
+    screen.blit(Str, (half_x - x_image/2 +50  , 100))
 
 # 失敗畫面
 def deadPaint(bus, screen, sets):
