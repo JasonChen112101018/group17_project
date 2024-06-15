@@ -138,6 +138,7 @@ def zombiesAction():
 
 # 殭屍行動函數
 def hitAction():
+    
     for zombie in bus.zombies:
         eat(zombie)
         hit(zombie)
@@ -150,9 +151,11 @@ def hitAction():
                 zombie.headFlag = False
         elif zombie.life == 0:
             bus.zombies.remove(zombie)
+            
 
 # 殭屍吃植物
 def eat(zb):
+    
     for plant in bus.paintPlants:
         if not isinstance(plant, Spikeweed) and not isinstance(zb, Zombie_head) and not isinstance(zb, Zombie_dead):
            if abs((plant.x + plant.width / 2) - (zb.x + 20)) < 10 and zb.y < plant.y - 40 and zb.y + 140 > plant.y:
@@ -189,8 +192,7 @@ def eat(zb):
 
 # 殭屍被攻擊
 def hit(zombie):
-    global zombie_killed
-    zombie_killed = 0
+    
     for bullet in bus.bullets:
         if zombie.hitBy(bullet) and not isinstance(zombie, Zombie_head) and not isinstance(zombie, Zombie_dead):
             zombie.life -= 1
@@ -207,7 +209,6 @@ def hit(zombie):
                     zombie.images = sets.zombieLostHeadImages
                     bus.zombies.append(Zombie_head(screen, sets.zombieHeadImages, zombie.x, zombie.y))
             elif zombie.life == 0:
-                zombie_killed += 1
                 bus.zombies.append(Zombie_dead(screen, sets.zombieDieImages, zombie.x, zombie.y))
 
         # 子彈超出邊界移除
