@@ -69,7 +69,7 @@ def paintZombies():
 def paintPlants():
     for plant in bus.paintPlants:
         plant.blitme()
-# 绘制子弹
+# 繪製子彈
 def paintBullets():
     for bullet in bus.bullets:
         bullet.blitme()
