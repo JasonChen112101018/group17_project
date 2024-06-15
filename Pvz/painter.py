@@ -141,12 +141,12 @@ def paintPause(bus, screen, sets):
     width, height = screen.get_size()
     half_x = width / 2
     half_y = height / 2
-
-    screen.blit(sets.Pause, (half_x-100, half_y-50))
+    x_image , y_image = sets.Pause.get_size()
+    screen.blit(sets.Pause, (half_x - x_image/2, 0))
     pygame.font.init()
     ft = pygame.font.Font('hiw.ttf', 20)
     Str = ft.render("Press to continue", True, (255, 0, 0))
-    screen.blit(Str, (half_x, 92))
+    screen.blit(Str, (half_x - x_image/2 +50  , 85))
 
 # 失敗畫面
 def deadPaint(bus, screen, sets):
