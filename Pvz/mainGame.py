@@ -65,7 +65,7 @@ def paintZombies():
         if isinstance(zombie, Zombie_head) or isinstance(zombie, Zombie_dead):
             if zombie.reloadFlag == 1:
                 bus.zombies.remove(zombie)
-# 绘制植物
+# 繪製植物
 def paintPlants():
     for plant in bus.paintPlants:
         plant.blitme()
