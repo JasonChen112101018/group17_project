@@ -250,6 +250,8 @@ class Setting(object):
 	# start the surface load
         self.surface = pygame.image.load('image/Welcome.png')
         self.surface = pygame.transform.scale(self.surface, (1400,600))
+        self.wood = pygame.image.load('image/wood.png')
+        self.wood = pygame.transform.scale(self.wood, (500,200))
         self.beginBtn = pygame.image.load('image/beginBtn.png').subsurface(Rect((0, 0), (329, 148)))
         self.beginBtn = pygame.transform.scale(self.beginBtn, (500,200))
 
