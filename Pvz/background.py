@@ -63,13 +63,16 @@ def action():
             mouseListener.cardMouseClickListener(bus)
             mouseListener.sunMouseClickListener(bus, screen, sets)
             mouseListener.runOrPause(bus, screen, sets)
-    if bus.state == bus.RUNNING:
+    if bus.state == bus.RUNNING: 
+        bus.globalTime += 1
+        time = bus.globalTime
         z_actioner.stepAction()
         z_actioner.zombiesAction()
         # 陽光的行動
         actioner.sunAction(bus, screen, sets)
         # 全局時間軸增加
-        bus.globalTime += 1
+        #bus.globalTime += 1
+        #print("time = %d"%bus.globalTime)
         for plant in bus.paintPlants:
             plant.step(bus, screen, sets)
         z_actioner.hitAction()
