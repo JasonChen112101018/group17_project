@@ -204,7 +204,7 @@ def hit(zombie):
             elif zombie.life == 0:
                 bus.zombies.append(Zombie_dead(screen, sets.zombieDieImages, zombie.x, zombie.y))
 
-        # 子弹越界删除
+        # 子彈超出邊界移除
         if bullet.outOfBounds():
             bus.bullets.remove(bullet)
 
