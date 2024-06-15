@@ -246,4 +246,17 @@ class Setting(object):
         self.topY = self.bottomY - 5 * self.gridHeight
         # right boundary
         self.rightX = self.gridXIndexes[9]
+	
+	# start the surface load
+        self.surface = pygame.image.load('image/Welcome.png')
+        self.surface = pygame.transform.scale(self.surface, (1400,600))
+        self.beginBtn = pygame.image.load('image/beginBtn.png').subsurface(Rect((0, 0), (329, 148)))
+        self.beginBtn = pygame.transform.scale(self.beginBtn, (500,200))
 
+        #end the image load
+        self.zombiewin = pygame.image.load('image/ZombiesWon.png')
+        self.selection = pygame.image.load('image/selection.png')
+        self.banner = pygame.image.load('image/banner_1.png')
+        self.menuBar = pygame.image.load('image/menuBar.png')
+        self.selectionBar = pygame.image.load('image/game_state/Button.png')
+        self.selectionBar = pygame.transform.scale(self.selectionBar, (230, 50))
