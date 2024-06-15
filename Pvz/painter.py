@@ -1,7 +1,7 @@
 from util.constant import Constant
 import pygame
 from  pygame.locals import *
-#import zombie_actioner as zb
+import mainGame as mg
 
 
 # 開始遊戲界面
@@ -161,8 +161,7 @@ def deadPaint(bus, screen, sets):
     ft = pygame.font.Font('hiw.ttf', 45)
     Str = ft.render("Game Defeat", True, (0, 195, 0))
     screen.blit(Str, (half_x - (scaled_x_image/3), height - (scaled_y_image)+150) )
-    #Str = ft.render("Score:"+ str(5*(zb.zombies_killed)), True, (255, 255, 255))
-    #screen.blit(Str, (550, 310))
+
     # 結束
     #screen.blit(sets.selectionBar, (555, 410))
     #pygame.font.init()
