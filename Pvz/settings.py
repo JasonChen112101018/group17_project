@@ -27,7 +27,7 @@ class Setting(object):
         # normal zombie
         self.zombie_normalImages = [
             "image/zombie_normal/0.png",
-            "image/zombie_normal/1.png",
+            
             "image/zombie_normal/2.png",
             "image/zombie_normal/3.png",
             "image/zombie_normal/4.png",
