@@ -189,7 +189,6 @@ def hit(zombie):
     for bullet in bus.bullets:
         if zombie.hitBy(bullet) and not isinstance(zombie, Zombie_head) and not isinstance(zombie, Zombie_dead):
             zombie.life -= 1
-            # 豌豆不穿透，仙人掌刺穿透
             if bullet.type == 0:
                 # for i in range(100):
                 #     screen.blit(sets.bulletHitImg, (zombie.x-100, zombie.y))
