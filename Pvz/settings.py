@@ -264,7 +264,7 @@ class Setting(object):
         #end the image load
         self.zombiewin = pygame.image.load('image/ZombiesWon.png')
         self.selection = pygame.image.load('image/selection.png')
-        self.banner = pygame.image.load('image/banner.png')
+        self.banner = pygame.image.load('image/banner_1.png')
         self.menuBar = pygame.image.load('image/menuBar.png')
         self.selectionBar = pygame.image.load('image/game_state/Button.png')
         self.selectionBar = pygame.transform.scale(self.selectionBar, (230, 50))
