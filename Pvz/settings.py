@@ -87,3 +87,43 @@ class Setting(object):
             "image/zombieLostHead/16.png",
             "image/zombieLostHead/17.png"
         ]
+        # head
+        self.zombieHeadImages = [
+            "image/zombieHead/0.png",
+            "image/zombieHead/1.png",
+            "image/zombieHead/2.png",
+            "image/zombieHead/3.png",
+            "image/zombieHead/4.png",
+            "image/zombieHead/5.png",
+            "image/zombieHead/6.png",
+            "image/zombieHead/7.png",
+            "image/zombieHead/8.png",
+            "image/zombieHead/9.png",
+            "image/zombieHead/10.png",
+            "image/zombieHead/11.png"
+        ]
+        # normal zombie attack
+        self.normalAttackImages = [
+            "image/zombie_normalAttack/0.png",
+            "image/zombie_normalAttack/1.png",
+            "image/zombie_normalAttack/2.png",
+            "image/zombie_normalAttack/3.png",
+            "image/zombie_normalAttack/4.png",
+            "image/zombie_normalAttack/5.png",
+            "image/zombie_normalAttack/6.png",
+            "image/zombie_normalAttack/7.png",
+            "image/zombie_normalAttack/8.png",
+            "image/zombie_normalAttack/9.png",
+            "image/zombie_normalAttack/10.png",
+            "image/zombie_normalAttack/11.png",
+            "image/zombie_normalAttack/12.png",
+            "image/zombie_normalAttack/13.png",
+            "image/zombie_normalAttack/14.png",
+            "image/zombie_normalAttack/15.png",
+            "image/zombie_normalAttack/16.png",
+            "image/zombie_normalAttack/17.png",
+            "image/zombie_normalAttack/18.png",
+            "image/zombie_normalAttack/19.png",
+            "image/zombie_normalAttack/20.png"
+
+        ]
