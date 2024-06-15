@@ -144,10 +144,14 @@ def runOrPause(bus, screen, sets):
     leftFlag = pygame.mouse.get_pressed()[0]
 
     mouseX, mouseY = pygame.mouse.get_pos()
+    
+    width, height = screen.get_size()
+    half_x = width / 2
+    half_y = height / 2
 
-    if mouseX >= 1265 and mouseX <= 1265 + 113 and mouseY >= 10 and mouseY <= 10 + 41 and bus.state == bus.RUNNING:
+    if mouseX >= width - 200 and mouseX <= width - 20 and mouseY >= 10 and mouseY <= 10 + 41 and bus.state == bus.RUNNING:
         bus.state = bus.PAUSE
-    elif 740 < mouseX  < 740 + 500 and 100 < mouseY < 200 + 100 and bus.state == bus.START:
+    elif 750 < mouseX  < 900 and 100 < mouseY < 200 + 100 and bus.state == bus.START:
         bus.state = bus.RUNNING
     elif 1257 < mouseX < 1350 and 495 < mouseY < 539:
         sys.exit(0)
