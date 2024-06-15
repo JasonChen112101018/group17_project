@@ -96,7 +96,7 @@ def action():
         zombiesAction()
         #  陽光動作
         actioner.sunAction(bus, screen, sets)
-        # 控制全局的时间轴时间增加
+        # 全局時間增加i
         bus.globalTime += 1
         for plant in bus.paintPlants:
             plant.step(bus, screen, sets)
