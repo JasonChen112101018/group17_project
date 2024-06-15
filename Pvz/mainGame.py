@@ -133,7 +133,7 @@ def zombiesAction():
                 bus.zombies.append(Zombie_normal(screen, sets.zombie_normalImages))
 
 
-# 碰撞测试
+# 殭屍行動函數
 def hitAction():
     for zombie in bus.zombies:
         eat(zombie)
