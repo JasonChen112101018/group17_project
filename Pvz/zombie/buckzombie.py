@@ -8,7 +8,7 @@ class Zombie_bucket(ParentZombie):
         self.screen = screen
         self.images = images
         self.image = pygame.image.load(self.images[0])
-        self.x = 1000
+        self.x = 1150
         self.y = 30 + random.randint(0, 4)*95
         self.life = 20
         self.damage = 1
