@@ -153,7 +153,7 @@ def runOrPause(bus, screen, sets):
         bus.state = bus.PAUSE
     elif 500 < mouseX  < 900 and 200 < mouseY < 300 and bus.state == bus.START:
         bus.state = bus.RUNNING
-    elif 1157 < mouseX < 1250 and 495 < mouseY < 539:
+    elif 950 < mouseX < 1100 and 490 < mouseY < 540:
         sys.exit(0)
     elif leftFlag and bus.state == bus.PAUSE:
         bus.state = bus.RUNNING
