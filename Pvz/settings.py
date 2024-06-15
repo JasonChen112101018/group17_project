@@ -169,3 +169,18 @@ class Setting(object):
             "image/zombieLostHeadAttack/9.png",
             "image/zombieLostHeadAttack/10.png"
         ]
+        # plant 
+        self.plantsInitImages = [
+            plantsImgDir + 'WallNut/',
+            plantsImgDir + 'SunFlower/',
+            plantsImgDir + 'Peashooter/',
+            plantsImgDir + 'Spikeweed/',
+            plantsImgDir + 'SnowPea/',
+        ]
+        self.peashooterImg = plantsImgDir + 'Peashooter/'
+        self.sunFlowerImg = plantsImgDir + 'SunFlower/'
+        self.wallNutImg = plantsImgDir + 'WallNut/'
+        self.wallNutCrackedImg = plantsImgDir + 'WallNutCracked/'
+        self.wallNutBadlyCrackedImg = plantsImgDir + 'WallNutBadlyCracked/'
+        self.snowPeaImg = plantsImgDir + 'SnowPea/'
+        self.spikeWeedImg = plantsImgDir + 'Spikeweed/'
