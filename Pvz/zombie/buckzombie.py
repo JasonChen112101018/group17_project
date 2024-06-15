@@ -1,6 +1,8 @@
 import pygame
 import random
 from zombie.Parentzombie import ParentZombie
+from util.bus import Bus
+bus = Bus()
 
 
 class Zombie_bucket(ParentZombie):
@@ -18,7 +20,7 @@ class Zombie_bucket(ParentZombie):
     def step(self, sets):
         # 1.移動
         if self.images == sets.zombie_bucketImages or self.images == sets.zombieLostHeadImages or self.images == sets.zombie_normalImages:
-            self.x -= 0.1
+            self.x -= bus.speed
         # 2.走路動畫
         self.index += 1
         ix = self.index / (len(self.images)/2) % len(self.images)

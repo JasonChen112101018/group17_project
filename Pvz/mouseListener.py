@@ -223,3 +223,6 @@ def restart(bus, screen):
 
     # 遊戲結束
     bus.endFlag = 0
+
+    #  殭屍速度
+    bus.speed = 0.1

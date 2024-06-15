@@ -189,7 +189,11 @@ def wonPaint(bus, screen, sets):
     pygame.font.init()
     ft = pygame.font.Font('hiw.ttf', 45)
     Str = ft.render("You Win", True, (0, 195, 0))
+<<<<<<< Updated upstream
     screen.blit(Str, (half_x - (scaled_x_image/3) , height - (scaled_y_image)+150))
+=======
+    screen.blit(Str, (half_x - (scaled_x_image/3), height - (scaled_y_image)+150))
+>>>>>>> Stashed changes
     # 結束
     #screen.blit(sets.selectionBar, (555, 410))
     #pygame.font.init()

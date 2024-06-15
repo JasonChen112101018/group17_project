@@ -60,3 +60,6 @@ class Bus:
     # Game end signal
     endFlag = 0
 
+    # zombie speed
+    speed = 0.1
+

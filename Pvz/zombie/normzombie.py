@@ -1,6 +1,9 @@
 import pygame
 from zombie.Parentzombie import ParentZombie
 import random
+from util.bus import Bus 
+
+bus = Bus() 
 
 
 class Zombie_normal(ParentZombie):
@@ -19,7 +22,7 @@ class Zombie_normal(ParentZombie):
 
     def step(self, sets):
         if self.images == sets.zombie_normalImages or self.images == sets.zombieLostHeadImages:
-            self.x -= 0.1
+            self.x -= bus.speed
         self.index += 1
         ix = self.index / (len(self.images)/2) % len(self.images)
         self.image = pygame.image.load(self.images[int(ix)])
