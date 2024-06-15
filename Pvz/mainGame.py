@@ -112,7 +112,7 @@ def stepAction():
         bullet.step()
 
 
-# 僵尸生成
+# 生成殭屍
 def zombiesAction():
     bus.zombieIndex += 1
     if 7000 <= bus.globalTime <= 8000 or 14200 <= bus.globalTime <= 14400:
