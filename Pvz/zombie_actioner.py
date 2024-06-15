@@ -4,17 +4,18 @@ from zombie.buckzombie import Zombie_bucket
 from zombie.head import Zombie_head
 from zombie.dead import Zombie_dead
 import pygame, sys, random
-import painter as painter
-import actioner as actioner
+#import painter as painter
+#import actioner as actioner
 import mouseListener as mouseListener
 from settings import Setting
 from util.bus import Bus
 from sun import Sun
 import zombie 
 #import zombie_actioner as z_actioner
-import zombie.zombie_painter as z_painter
-import plant.Plantpainter as plantpainter
+#import zombie.zombie_painter as z_painter
+#import plant.Plantpainter as plantpainter
 from plant.spikeweed import Spikeweed
+#from pygame.locals import *
 #import background 
 
 bus = Bus()
@@ -34,7 +35,7 @@ def stepAction():
 def zombiesAction():
     bus.zombieIndex += 1
     bus.globalTime += 1
-    #print("time : %d"%bus.globalTime)
+    print("time : %d"%bus.globalTime)
     if 7000 <= bus.globalTime <= 8000 or 14200 <= bus.globalTime <= 14400:
         bus.zombieRate = 100
     else:
