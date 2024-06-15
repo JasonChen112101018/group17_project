@@ -58,7 +58,7 @@ def paint():
         painter.wonPaint(bus, screen, sets)
         
 
-# 绘制僵尸
+# 繪製殭屍
 def paintZombies():
     for zombie in bus.zombies:
         zombie.blitme()
