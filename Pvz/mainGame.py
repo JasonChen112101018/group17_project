@@ -37,7 +37,7 @@ def paint():
         painter.initStartSurface(bus, screen, sets)
         return
 
-    # 判断是否需要画暂停标志
+    # 繪製背景
     painter.initScenario(bus, screen, sets)
     paintZombies()
     painter.cardMovePaint(bus, screen, sets)
