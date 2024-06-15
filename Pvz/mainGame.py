@@ -16,8 +16,8 @@ import time
 
 bus = Bus()
 sets = Setting()
-global zombie_killed = 0
-global zombie_died = 0
+zombie_killed = 0
+zombie_died = 0
 screen = pygame.display.set_mode((1050, 600), 0, 0)
 
 def initSun():
@@ -177,7 +177,6 @@ def hitAction() :
             if zombie.headFlag is True:
                 zombie.images = sets.zombieLostHeadImages
                 zombie_died += 1
-    
                 zombie.headFlag = False
         elif zombie.life <= 0:
             #zombie_killed += 1

@@ -1,5 +1,6 @@
 import pygame
 import abc
+from util.bus import Bus
 
 class Plant(object):
     def __init__(self, screen, x, y, image):
@@ -19,6 +20,12 @@ class Plant(object):
         self.attack = 0
         self.interval = 0
         self.cd = 0
+
+    def zombieflag(self):
+        for zombie in Bus.zombies:
+            if abs(zombie.y - self.y) < 10 and zombie.x < 950:
+                return True
+        return False
 
     # 植物功能
     @abc.abstractmethod

@@ -2,6 +2,9 @@ import pygame
 from plant.Parentplant import Plant # 植物父類
 from settings import Setting #圖片路徑
 from bullet import Bullet #子彈定義
+from util.bus import Bus
+
+bus = Bus()
 
 class Peashooter(Plant):
     def __init__(self, screen, x, y, images):
@@ -21,12 +24,10 @@ class Peashooter(Plant):
         self.interval = 150
         self.cd = 10
 
-    
-    
     # 植物晃動
     def step(self, bus, screen, sets):
         self.index += 1
-        if self.index == self.interval:
+        if self.index == self.interval and self.zombieflag == 1:
             bus.bullets.append(self.shootBy(screen, sets.peaBulletImg))
             self.index = 0
         ix = self.index / 7 % len(self.images)
