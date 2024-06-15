@@ -214,3 +214,16 @@ class Setting(object):
         self.cardsnowPeaDark = pygame.transform.scale(self.cardsnowPeaDark, (55,68))
         self.cardspikeWeedDark = pygame.transform.scale(self.cardspikeWeedDark, (55,68))
         self.sunflowerDark = pygame.transform.scale(self.sunflowerDark, (55, 68))
+        
+        #rotate the pic
+        self.cardShovel = pygame.transform.rotate(self.cardShovel, 45)
+
+        # load
+        self.cardImgs = [
+            pygame.image.load('image/mouseMoveCard/mouseNut.gif'),
+            pygame.image.load('image/mouseMoveCard/mouseSunflower.gif'),
+            pygame.image.load('image/mouseMoveCard/mousePeashooter.gif'),
+            pygame.image.load('image/mouseMoveCard/mouseSpikeweed.gif'),
+            pygame.image.load('image/mouseMoveCard/mouseSnowPea.gif'),
+            self.cardShovel
+        ]
