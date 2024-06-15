@@ -96,7 +96,7 @@ def action():
         zombiesAction()
         #  陽光動作
         actioner.sunAction(bus, screen, sets)
-        # 全局時間增加i
+        # 全局時間增加
         bus.globalTime += 1
         for plant in bus.paintPlants:
             plant.step(bus, screen, sets)
@@ -105,7 +105,7 @@ def action():
 
 # 走一步
 def stepAction():
-    # 僵尸走一步
+    # 殭屍走一步
     for zombie in bus.zombies:
         zombie.step(sets)
     for bullet in bus.bullets:
