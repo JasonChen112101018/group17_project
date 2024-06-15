@@ -113,12 +113,12 @@ def painProgressBar(bus, screen, sets):
 
     # 一大波殭屍提示語
     if percentage >= 70 and percentage <= 80:
-        screen.blit(sets.largeWave, (half_x - 250, half_y))
+        screen.blit(sets.largeWave, (half_x - 250, half_y - 50))
 
 
     # 最后一波提示語
-    if percentage >= 143 and percentage <= 144:
-        screen.blit(sets.finalWave, (half_x -100, half_y))
+    if percentage >= 134 and percentage <= 144:
+        screen.blit(sets.finalWave, (half_x -100, half_y - 50))
         if not bus.finalPercentage:
             bus.finalPercentage = True
 
@@ -142,11 +142,11 @@ def paintPause(bus, screen, sets):
     half_x = width / 2
     half_y = height / 2
 
-    screen.blit(sets.Pause, (0, 0))
+    screen.blit(sets.Pause, (half_x, 20))
     pygame.font.init()
     ft = pygame.font.Font('hiw.ttf', 20)
     Str = ft.render("Press to continue", True, (255, 0, 0))
-    screen.blit(Str, (562, 92))
+    screen.blit(Str, (half_x, 92))
 
 # 失敗畫面
 def deadPaint(bus, screen, sets):
