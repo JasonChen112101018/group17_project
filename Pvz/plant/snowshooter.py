@@ -25,8 +25,9 @@ class Snowshooter(Plant):
     def step(self, bus, screen, sets):
         self.index += 1
         if self.index == self.interval:
-            bus.bullets.append(self.shootBy(screen, sets.snowPeaBulletImg))
             self.index = 0
+            if zombieflag():
+                bus.bullets.append(self.shootBy(screen, sets.snowPeaBulletImg))
         ix = self.index / 7 % len(self.images)
         self.image = self.images[int(ix)]
 
