@@ -1,7 +1,7 @@
 from util.constant import Constant
 import pygame
 from  pygame.locals import *
-import zombie_actioner as zb
+#import zombie_actioner as zb
 
 
 # 開始遊戲界面
@@ -127,19 +127,14 @@ def painProgressBar(bus, screen, sets):
 
     if percentage <= 145:
         screen.blit(sets.flagMeterEmpty.subsurface(Rect((0, 0), (157 - percentage, 21))), (width-160, height-25))
-       # screen.blit(sets.flagMeterParts1, (width - 20 - percentage, height - 25))
         screen.blit(sets.flagMeterParts2, (width - 5 - percentage, height - 35))
         screen.blit(sets.flagMeterParts1, (width - 20 - percentage, height - 25))
 
 
     else:
-       # screen.blit(sets.flagMeterParts1, (width - 145, height - 30))
         screen.blit(sets.flagMeterParts2, (width - 150, height - 35))
         screen.blit(sets.flagMeterParts1, (width - 165, height - 25))
 
-
-
-    #screen.blit(sets.flagMeterParts2, (width - 20 , height - 30))
 
 # 暫停標誌
 def paintPause(bus, screen, sets):
@@ -159,9 +154,9 @@ def deadPaint(bus, screen, sets):
     pygame.font.init()
     ft = pygame.font.Font('hiw.ttf', 45)
     Str = ft.render("Game Defeat", True, (255, 255, 255))
-    screen.blit(Str, (550, 255))
-    Str = ft.render("Score:"+ str(5*(zb.zombies_killed)), True, (255, 255, 255))
-    screen.blit(Str, (550, 310))
+    #screen.blit(Str, (550, 255))
+    #Str = ft.render("Score:"+ str(5*(zb.zombies_killed)), True, (255, 255, 255))
+    #screen.blit(Str, (550, 310))
     # 結束
     screen.blit(sets.selectionBar, (555, 410))
     pygame.font.init()
