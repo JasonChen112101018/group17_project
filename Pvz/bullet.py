@@ -1,4 +1,5 @@
 import pygame
+import zombie as zombie
 
 class Bullet(object):
     def __init__(self, screen, image, peaX, peaY, type):
