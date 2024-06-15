@@ -215,7 +215,7 @@ def hit(zombie):
 
 
 def main():
-    pygame.display.set_caption("植物大战僵尸")
+    pygame.display.set_caption("Plants vs Zombies")
     initSun()
     while True:
         action()
