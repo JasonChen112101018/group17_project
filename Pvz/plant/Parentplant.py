@@ -23,7 +23,7 @@ class Plant(object):
 
     def zombieflag(self):
         for zombie in Bus.zombies:
-            if abs(zombie.y - self.y) < 10 and zombie.x < 950:
+            if zombie.x < 970 and zombie.y < self.y < zombie.y + 70:
                 return True
         return False
 
