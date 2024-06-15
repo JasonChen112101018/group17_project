@@ -200,3 +200,17 @@ class Setting(object):
         self.cardspikeWeedDark = pygame.image.load('image/card/spikeweeddark.png')
         self.sunflowerDark = pygame.image.load('image/card/sunflowerdark.png')
         
+        # scale the card
+        self.cardNutWall = pygame.transform.scale(self.cardNutWall, (55,68))
+        self.cardPeashooter = pygame.transform.scale(self.cardPeashooter, (55, 68))
+        self.sunflower = pygame.transform.scale(self.sunflower, (55, 68))
+        self.cardsnowPea = pygame.transform.scale(self.cardsnowPea, (55,68))
+        self.cardspikeWeed = pygame.transform.scale(self.cardspikeWeed, (55,68))
+        self.cardShovelBack = pygame.transform.scale(self.cardShovelBack, (70,86))
+        self.cardShovel = pygame.transform.scale(self.cardShovel, (55,55))
+
+        self.cardNutWallDark = pygame.transform.scale(self.cardNutWallDark, (55, 68))
+        self.cardPeashooterDark = pygame.transform.scale(self.cardPeashooterDark, (55, 68))
+        self.cardsnowPeaDark = pygame.transform.scale(self.cardsnowPeaDark, (55,68))
+        self.cardspikeWeedDark = pygame.transform.scale(self.cardspikeWeedDark, (55,68))
+        self.sunflowerDark = pygame.transform.scale(self.sunflowerDark, (55, 68))
