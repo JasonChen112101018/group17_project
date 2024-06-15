@@ -227,3 +227,23 @@ class Setting(object):
             pygame.image.load('image/mouseMoveCard/mouseSnowPea.gif'),
             self.cardShovel
         ]
+        
+        # bullet pic
+        self.peaBulletImg = 'image/peaBullet.png'
+        self.snowPeaBulletImg = 'image/snowBullet.png'
+        # bullet explode
+        self.bulletHitImg = pygame.image.load('image/PeaBulletHit.png')
+        self.snowbulletHitImg = pygame.image.load('image/SnowPeaBulletHit.png')
+        # position
+        self.gridXIndexes = [260, 340, 418, 500, 583, 662, 740, 820, 910, 996]
+        # height
+        self.gridHeight = 95
+        # low boundary
+        self.bottomY = 574
+        # left boundary
+        self.leftX = self.gridXIndexes[0]
+        # upper boundary
+        self.topY = self.bottomY - 5 * self.gridHeight
+        # right boundary
+        self.rightX = self.gridXIndexes[9]
+
