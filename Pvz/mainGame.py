@@ -178,7 +178,7 @@ def eat(zb):
                             zb.images = sets.zombie_bucketImages
 
         if isinstance(plant, Spikeweed):
-            if abs((plant.x + plant.width / 2) - (zb.x + 20)) < 10 and zb.y < plant.y - 40 and zb.y + 140 > plant.y:
+            if abs((plant.x + plant.width / 2) - (zb.x + zb.width/2)) < 10 and zb.y < plant.y - 40 and zb.y + 140 > plant.y:
                 zb.life -= 1
                 zb.x += 0.01
                 if zb.life == 5:
