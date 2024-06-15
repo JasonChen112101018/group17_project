@@ -129,7 +129,7 @@ def zombiesAction():
             if type < 8:
                 bus.zombies.append(Zombie_bucket(screen, sets.zombie_bucketImages))
             else:
-                # 1.存储到列表中
+                # 儲存殭屍到列表中
                 bus.zombies.append(Zombie_normal(screen, sets.zombie_normalImages))
 
 
