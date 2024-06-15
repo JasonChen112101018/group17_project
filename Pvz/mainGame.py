@@ -184,7 +184,7 @@ def eat(zb):
                     bus.zombies.append(Zombie_dead(screen, sets.zombieDieImages, zb.x, zb.y))
 
 
-# 殭屍被攻击
+# 殭屍被攻擊
 def hit(zombie):
     for bullet in bus.bullets:
         if zombie.hitBy(bullet) and not isinstance(zombie, Zombie_head) and not isinstance(zombie, Zombie_dead):
