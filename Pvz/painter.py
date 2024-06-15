@@ -1,7 +1,7 @@
 from util.constant import Constant
 import pygame
 from  pygame.locals import *
-import mainGame as mg
+
 
 
 # 開始遊戲界面
