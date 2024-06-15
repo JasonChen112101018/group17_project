@@ -28,10 +28,10 @@ def initSun():
         bus.sunFall.append(sun)
 
 '''
-paint部分
+paint part
 '''
 
-# 场景绘制主函数
+# 場景繪製
 def paint():
     if bus.state == bus.START:
         painter.initStartSurface(bus, screen, sets)
