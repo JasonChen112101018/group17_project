@@ -127,3 +127,31 @@ class Setting(object):
             "image/zombie_normalAttack/20.png"
 
         ]
+        # bucket zombie attack
+        self.bucketAttackImages = [
+            "image/zombie_bucketAttack/0.png",
+            "image/zombie_bucketAttack/1.png",
+            "image/zombie_bucketAttack/2.png",
+            "image/zombie_bucketAttack/3.png",
+            "image/zombie_bucketAttack/4.png",
+            "image/zombie_bucketAttack/5.png",
+            "image/zombie_bucketAttack/6.png",
+            "image/zombie_bucketAttack/7.png",
+            "image/zombie_bucketAttack/8.png",
+            "image/zombie_bucketAttack/9.png",
+            "image/zombie_bucketAttack/10.png"
+        ]
+
+        # zombie die
+        self.zombieDieImages = [
+            "image/zombieDie/0.png",
+            "image/zombieDie/1.png",
+            "image/zombieDie/2.png",
+            "image/zombieDie/3.png",
+            "image/zombieDie/4.png",
+            "image/zombieDie/5.png",
+            "image/zombieDie/6.png",
+            "image/zombieDie/7.png",
+            "image/zombieDie/8.png",
+            "image/zombieDie/9.png"
+        ]
