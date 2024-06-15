@@ -146,6 +146,7 @@ def zombiesAction():
         bus.zombieRate = 100
     elif 13500 <= bus.globalTime <= 14400:
         bus.zombieRate = 50
+        bus.speed *= 1000
     else:
         bus.zombieRate = 1000
 
@@ -186,7 +187,7 @@ def hitAction() :
              #   zombie_killed -= 334
               #  zombie_died += 1
             #print(zombie_killed)
-            print(zombie_died)
+            #print(zombie_died)
             bus.zombies.remove(zombie)
             
 
