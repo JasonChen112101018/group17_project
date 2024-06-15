@@ -66,4 +66,24 @@ class Setting(object):
             "image/zombie_bucket/13.png",
             "image/zombie_bucket/14.png"
         ]
-	
+	# lost head zombie
+        self.zombieLostHeadImages = [
+            "image/zombieLostHead/0.png",
+            "image/zombieLostHead/1.png",
+            "image/zombieLostHead/2.png",
+            "image/zombieLostHead/3.png",
+            "image/zombieLostHead/4.png",
+            "image/zombieLostHead/5.png",
+            "image/zombieLostHead/6.png",
+            "image/zombieLostHead/7.png",
+            "image/zombieLostHead/8.png",
+            "image/zombieLostHead/9.png",
+            "image/zombieLostHead/10.png",
+            "image/zombieLostHead/11.png",
+            "image/zombieLostHead/12.png",
+            "image/zombieLostHead/13.png",
+            "image/zombieLostHead/14.png",
+            "image/zombieLostHead/15.png",
+            "image/zombieLostHead/16.png",
+            "image/zombieLostHead/17.png"
+        ]
