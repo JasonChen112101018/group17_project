@@ -11,10 +11,11 @@ from settings import Setting
 from util.bus import Bus
 from sun import Sun
 import zombie 
-import zombie_actioner as z_actioner
+#import zombie_actioner as z_actioner
 import zombie.zombie_painter as z_painter
 import plant.Plantpainter as plantpainter
 from plant.spikeweed import Spikeweed
+#import background 
 
 bus = Bus()
 sets = Setting()
@@ -32,13 +33,16 @@ def stepAction():
 # 生成殭屍
 def zombiesAction():
     bus.zombieIndex += 1
+    bus.globalTime += 1
+    #print("time : %d"%bus.globalTime)
     if 7000 <= bus.globalTime <= 8000 or 14200 <= bus.globalTime <= 14400:
         bus.zombieRate = 100
     else:
         bus.zombieRate = 1000
 
-    if bus.globalTime == 14300:
+    if bus.globalTime >= 14300:
         bus.endFlag = 1
+        print("endFlag : %d"%bus.endFlag)
         
     if bus.globalTime < 14400:
         if bus.zombieIndex % bus.zombieRate == 0:
@@ -47,6 +51,9 @@ def zombiesAction():
                 bus.zombies.append(Zombie_bucket(screen, sets.zombie_bucketImages))
             else:
                 bus.zombies.append(Zombie_normal(screen, sets.zombie_normalImages))
+    #else:
+     #   if len(bus.zombies) == 0:
+      #      bus.endFlag = 1
 
 # 殭屍被攻擊
 def hitAction():
@@ -62,7 +69,9 @@ def hitAction():
                 zombie.images = sets.zombieLostHeadImages
                 zombie.headFlag = False
         elif zombie.life == 0:
+            print("before remove : %d"%len(bus.zombies))
             bus.zombies.remove(zombie)
+            print("after remove : %d"%len(bus.zombies))
             zombies_killed += 1  # Increment counter when zombie dies
 
 # 殭屍吃植物
