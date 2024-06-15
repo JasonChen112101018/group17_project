@@ -14,7 +14,7 @@ class Bullet(object):
         self.type = type
 
     def outOfBounds(self):
-        return self.x > 970
+        return self.x > 1000
 
     def step(self):
         self.x += 3

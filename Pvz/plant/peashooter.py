@@ -21,6 +21,8 @@ class Peashooter(Plant):
         self.interval = 150
         self.cd = 10
 
+    
+    
     # 植物晃動
     def step(self, bus, screen, sets):
         self.index += 1
