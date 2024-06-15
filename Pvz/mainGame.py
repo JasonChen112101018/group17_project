@@ -152,14 +152,14 @@ def hitAction():
 def eat(zb):
     for plant in bus.paintPlants:
         if not isinstance(plant, Spikeweed) and not isinstance(zb, Zombie_head) and not isinstance(zb, Zombie_dead):
-            if plant.x + plant.width/2 == zb.x + 20 and zb.y + 100 < plant.y + 100 and zb.y + 100 > plant.y:
+           if abs((plant.x + plant.width / 2) - (zb.x + 20)) < 10 and zb.y < plant.y - 40 and zb.y + 140 > plant.y:
                 if zb.life <= 3:
                     zb.images = sets.zombieLostHeadAttackImages
                 elif zb.life <= 5:
                     zb.images = sets.normalAttackImages
                 else:
                     zb.images = sets.bucketAttackImages
-                plant.life -= 0.001
+                plant.life -= 1
                 if plant.life == 0:
                     bus.gridList[plant.gridX][plant.gridY] = -1
                     bus.paintPlants.remove(plant)
