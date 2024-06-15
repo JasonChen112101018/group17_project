@@ -210,7 +210,7 @@ def hit(zombie):
 
 
 '''
-程序入口
+ main function 
 '''
 
 
