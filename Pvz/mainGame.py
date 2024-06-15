@@ -82,7 +82,7 @@ action部分
 # 事件函數
 def action():
 
-    # 监听事件
+    # 滑鼠事件i
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             sys.exit()
