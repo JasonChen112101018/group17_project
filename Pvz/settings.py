@@ -155,3 +155,17 @@ class Setting(object):
             "image/zombieDie/8.png",
             "image/zombieDie/9.png"
         ]
+        # lost head zombie attack
+        self.zombieLostHeadAttackImages = [
+            "image/zombieLostHeadAttack/0.png",
+            "image/zombieLostHeadAttack/1.png",
+            "image/zombieLostHeadAttack/2.png",
+            "image/zombieLostHeadAttack/3.png",
+            "image/zombieLostHeadAttack/4.png",
+            "image/zombieLostHeadAttack/5.png",
+            "image/zombieLostHeadAttack/6.png",
+            "image/zombieLostHeadAttack/7.png",
+            "image/zombieLostHeadAttack/8.png",
+            "image/zombieLostHeadAttack/9.png",
+            "image/zombieLostHeadAttack/10.png"
+        ]
