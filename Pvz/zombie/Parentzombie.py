@@ -14,7 +14,7 @@ class ParentZombie(object):
         self.headFlag = True
 
     def outOfBounds(self):
-        return self.x < 150
+        return self.x < 130
 
     @abc.abstractmethod
     def step(self, sets):
