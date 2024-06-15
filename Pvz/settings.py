@@ -48,4 +48,22 @@ class Setting(object):
             "image/zombie_normal/20.png",
             "image/zombie_normal/21.png"
         ]
-        
+        # bucket zombie
+        self.zombie_bucketImages = [
+            "image/zombie_bucket/0.png",
+            "image/zombie_bucket/1.png",
+            "image/zombie_bucket/2.png",
+            "image/zombie_bucket/3.png",
+            "image/zombie_bucket/4.png",
+            "image/zombie_bucket/5.png",
+            "image/zombie_bucket/6.png",
+            "image/zombie_bucket/7.png",
+            "image/zombie_bucket/8.png",
+            "image/zombie_bucket/9.png",
+            "image/zombie_bucket/10.png",
+            "image/zombie_bucket/11.png",
+            "image/zombie_bucket/12.png",
+            "image/zombie_bucket/13.png",
+            "image/zombie_bucket/14.png"
+        ]
+	
