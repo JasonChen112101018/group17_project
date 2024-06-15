@@ -17,7 +17,7 @@ import time
 bus = Bus()
 sets = Setting()
 
-screen = pygame.display.set_mode((1400, 600), 0, 0)
+screen = pygame.display.set_mode((1050, 600), 0, 0)
 
 def initSun():
     for i in range(1):
