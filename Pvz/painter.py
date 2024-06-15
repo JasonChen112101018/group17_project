@@ -11,7 +11,7 @@ def initStartSurface(bus, screen, sets):
     scaled_wood = pygame.transform.scale(sets.wood, (400, 300))
     scaled_beginBtn = pygame.transform.scale(sets.beginBtn, (300, 200))
     screen.blit(scaled_surface, (0,0))
-    screen.blit(scaled_wood, (180,110))
+    screen.blit(scaled_wood, (160,120))
     screen.blit(scaled_beginBtn, (600,100))
 
 # 滑鼠拖曳植物
