@@ -44,7 +44,7 @@ def paint():
     paintPlants()
     paintBullets()
 
-    # 绘制下落及在地上的太阳
+    # 繪製太陽
     painter.paintSun(bus, screen, sets)
     # 绘制太阳总分数状态
     painter.paintSunScore(bus, screen, sets)
