@@ -16,7 +16,8 @@ import time
 
 bus = Bus()
 sets = Setting()
-
+global zombie_killed 
+global zombie_died
 screen = pygame.display.set_mode((1050, 600), 0, 0)
 
 def initSun():
@@ -37,6 +38,19 @@ def paint():
         painter.initStartSurface(bus, screen, sets)
         return
 
+    width, height = screen.get_size()
+    half_x = width / 2
+    half_y = height / 2
+    x_image , y_image = sets.menuBar.get_size()
+    scaled_menuBar = pygame.transform.scale(sets.menuBar, (x_image*0.8, y_image*0.8))
+    scaled_x_image, scaled_y_image = scaled_menuBar.get_size()
+    global zombie_killed
+    #if bus.state == bus.DEAD or bus.state == bus.END:
+    '''pygame.font.init()
+    ft = pygame.font.Font('hiw.ttf', 45)
+    Str = ft.render("Score : " + str(5*zombie_died), True, (0, 195, 0))
+    screen.blit(Str, (half_x - (scaled_x_image/3), height - (scaled_y_image)+50))'''
+
     # 繪製背景
     painter.initScenario(bus, screen, sets)
     #paintZombies()
@@ -55,8 +69,20 @@ def paint():
         painter.paintPause(bus, screen, sets)
     elif bus.state == bus.DEAD:
         painter.deadPaint(bus, screen, sets)
+        pygame.font.init()
+        ft = pygame.font.Font('coltones.regular.ttf', 60)
+        Str = ft.render("Score : " + str(5*zombie_died), True, (255,255 , 255))
+        screen.blit(Str, (half_x - (scaled_x_image/3)+40, height - 86))
+        #paintScore()
+        #painter.deadPaint(bus, screen, sets)
     elif bus.state == bus.END:
         painter.wonPaint(bus, screen, sets)
+        pygame.font.init()
+        ft = pygame.font.Font('coltones.regular.ttf', 60)
+        Str = ft.render("Score : " + str(5*zombie_died), True, (255, 255, 255))
+        screen.blit(Str, (half_x - (scaled_x_image/3)+40, height-86))
+        #paintScore()
+        #painter.wonPaint(bus, screen, sets)
         
 
 # 繪製殭屍
@@ -137,8 +163,9 @@ def zombiesAction():
 
 
 # 殭屍行動函數
-def hitAction():
-    
+def hitAction() :
+    global zombie_killed
+    global zombie_died
     for zombie in bus.zombies:
         eat(zombie)
         hit(zombie)
@@ -148,8 +175,18 @@ def hitAction():
         elif zombie.life == 3:
             if zombie.headFlag is True:
                 zombie.images = sets.zombieLostHeadImages
+                zombie_died += 1
                 zombie.headFlag = False
-        elif zombie.life == 0:
+        elif zombie.life <= 0:
+            #zombie_killed += 1
+            #if zombie_killed % 64 == 0:
+             #   zombie_killed -= 64
+              #  zombie_died += 1
+            #elif zombie_killed % 334 == 0:
+             #   zombie_killed -= 334
+              #  zombie_died += 1
+            #print(zombie_killed)
+            print(zombie_died)
             bus.zombies.remove(zombie)
             
 
@@ -221,12 +258,30 @@ def hit(zombie):
  main function 
 '''
 
+'''def paintScore():
+    width, height = screen.get_size()
+    half_x = width / 2
+    half_y = height / 2
+    x_image , y_image = sets.menuBar.get_size()
+    scaled_menuBar = pygame.transform.scale(sets.menuBar, (x_image*0.8, y_image*0.8))
+    scaled_x_image, scaled_y_image = scaled_menuBar.get_size()
+    global zombie_killed
+    #if bus.state == bus.DEAD or bus.state == bus.END:
+    pygame.font.init()
+    ft = pygame.font.Font('hiw.ttf', 45)
+    Str = ft.render("Score : " + str(5*zombie_died), True, (0, 195, 0))
+    screen.blit(Str, (half_x - (scaled_x_image/3), height - (scaled_y_image)+50))'''
 
 def main():
     pygame.display.set_caption("Plants vs Zombies")
+    global zombie_killed 
+    zombie_killed = 0
+    global zombie_died
+    zombie_died = 0
     initSun()
     while True:
         action()
+        #paintScore()
         paint()
         pygame.display.update()
 
