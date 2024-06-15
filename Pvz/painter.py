@@ -142,7 +142,7 @@ def paintPause(bus, screen, sets):
     half_x = width / 2
     half_y = height / 2
 
-    screen.blit(sets.Pause, (half_x, 20))
+    screen.blit(sets.Pause, (half_x-100, half_y-50))
     pygame.font.init()
     ft = pygame.font.Font('hiw.ttf', 20)
     Str = ft.render("Press to continue", True, (255, 0, 0))
@@ -150,19 +150,25 @@ def paintPause(bus, screen, sets):
 
 # 失敗畫面
 def deadPaint(bus, screen, sets):
-    screen.blit(sets.menuBar, (466, 100))
+    width, height = screen.get_size()
+    half_x = width / 2
+    half_y = height / 2
+    x_image , y_image = sets.menuBar.get_size()
+    scaled_menuBar = pygame.transform.scale(sets.menuBar, (x_image*0.8, y_image*0.8))
+    scaled_x_image, scaled_y_image = scaled_menuBar.get_size()
+    screen.blit(scaled_menuBar, (half_x - (scaled_x_image/2), height - (scaled_y_image)))
     pygame.font.init()
     ft = pygame.font.Font('hiw.ttf', 45)
     Str = ft.render("Game Defeat", True, (255, 255, 255))
-    #screen.blit(Str, (550, 255))
+    screen.blit(Str, (550, 255))
     #Str = ft.render("Score:"+ str(5*(zb.zombies_killed)), True, (255, 255, 255))
     #screen.blit(Str, (550, 310))
     # 結束
-    screen.blit(sets.selectionBar, (555, 410))
-    pygame.font.init()
-    ft = pygame.font.Font('hiw.ttf', 32)
-    Str = ft.render("exit", True, (60, 60, 60))
-    screen.blit(Str, (628, 417))
+    #screen.blit(sets.selectionBar, (555, 410))
+    #pygame.font.init()
+    #ft = pygame.font.Font('hiw.ttf', 32)
+    #Str = ft.render("exit", True, (60, 60, 60))
+    #screen.blit(Str, (628, 417))
 
 def restartPaint(bus, screen, sets):
     screen.blit(sets.selectionBar, (555, 340))
