@@ -48,7 +48,7 @@ def paint():
     painter.paintSun(bus, screen, sets)
     # 繪製太陽數量
     painter.paintSunScore(bus, screen, sets)
-    # 绘制进度条
+    # 繪製進度條
     painter.painProgressBar(bus, screen, sets)
     if bus.state == bus.PAUSE:
         painter.paintPause(bus, screen, sets)
