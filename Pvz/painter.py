@@ -8,7 +8,7 @@ from  pygame.locals import *
 def initStartSurface(bus, screen, sets):
     window_size = screen.get_size()
     scaled_surface = pygame.transform.scale(sets.surface, window_size)
-    scaled_wood = pygame.transform.scale(sets.wood, (300, 200))
+    scaled_wood = pygame.transform.scale(sets.wood, (400, 300))
     scaled_beginBtn = pygame.transform.scale(sets.beginBtn, (300, 200))
     screen.blit(scaled_surface, (0,0))
     screen.blit(scaled_wood, (200,100))
