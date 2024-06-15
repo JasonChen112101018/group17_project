@@ -39,11 +39,12 @@ def paint():
 
     # 繪製背景
     painter.initScenario(bus, screen, sets)
-    paintZombies()
+    #paintZombies()
     painter.cardMovePaint(bus, screen, sets)
     paintPlants()
     paintBullets()
-
+    paintZombies()
+    painter.cardMovePaint(bus, screen, sets)
     # 繪製太陽
     painter.paintSun(bus, screen, sets)
     # 繪製太陽數量
@@ -115,8 +116,10 @@ def stepAction():
 # 生成殭屍
 def zombiesAction():
     bus.zombieIndex += 1
-    if 7000 <= bus.globalTime <= 8000 or 14200 <= bus.globalTime <= 14400:
+    if 7000 <= bus.globalTime <= 8000:
         bus.zombieRate = 100
+    elif 13500 <= bus.globalTime <= 14400:
+        bus.zombieRate = 50
     else:
         bus.zombieRate = 1000
 
@@ -186,6 +189,8 @@ def eat(zb):
 
 # 殭屍被攻擊
 def hit(zombie):
+    global zombie_killed
+    zombie_killed = 0
     for bullet in bus.bullets:
         if zombie.hitBy(bullet) and not isinstance(zombie, Zombie_head) and not isinstance(zombie, Zombie_dead):
             zombie.life -= 1
@@ -202,6 +207,7 @@ def hit(zombie):
                     zombie.images = sets.zombieLostHeadImages
                     bus.zombies.append(Zombie_head(screen, sets.zombieHeadImages, zombie.x, zombie.y))
             elif zombie.life == 0:
+                zombie_killed += 1
                 bus.zombies.append(Zombie_dead(screen, sets.zombieDieImages, zombie.x, zombie.y))
 
         # 子彈超出邊界移除
