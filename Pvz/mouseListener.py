@@ -158,10 +158,10 @@ def runOrPause(bus, screen, sets):
     elif leftFlag and bus.state == bus.PAUSE:
         bus.state = bus.RUNNING
     elif bus.state == bus.DEAD or bus.state == bus.END:
-        if 555 < mouseX < 780 and  340 < mouseY < 390 :
+        if half_x - 50 < mouseX < half_x + 50 and  410 < mouseY < 460 :
             restart(bus, screen)
             bus.state = bus.START
-        elif 555 < mouseX < 780 and  410 < mouseY < 460 :
+        elif half_x - 50 < mouseX < half_x + 50  and  470 < mouseY < 520 :
             sys.exit(0)
 
 # 初始化bus中的各個值
