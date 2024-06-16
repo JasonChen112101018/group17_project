@@ -249,12 +249,7 @@ def hit(zombie):
  main function 
 '''
 
-'''def paintScore():
-    width, height = screen.get_size()
-    half_x = width / 2
-    half_y = height / 2
-    x_image , y_image = sets.menuBar.get_size()
-    scaled_menuBar = pygame.t
+'''
     '''
 
 def main():
