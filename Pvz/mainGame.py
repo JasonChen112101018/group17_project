@@ -205,7 +205,7 @@ def eat(zb):
                 else:
                     zb.images = sets.bucketAttackImages
                 plant.life -= 1
-                if plant.life == 0:
+                if plant.life <= 0:
                     bus.gridList[plant.gridX][plant.gridY] = -1
                     bus.paintPlants.remove(plant)
                     if zb.images == sets.zombieLostHeadAttackImages:
