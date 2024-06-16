@@ -28,7 +28,7 @@ def initSun():
             bus.sunFall.append(sun)
 
 '''
-paint part
+painter 部分
 '''
 
 # 場景繪製
@@ -74,8 +74,6 @@ def paint():
         Str = ft.render("Score : " + str(5*zombie_died), True, (255, 255, 255))
         screen.blit(Str, (half_x - (scaled_x_image/3)+40, height-86))
         
-        
-
 # 繪製殭屍
 def paintZombies():
     for zombie in bus.zombies:
@@ -95,7 +93,6 @@ def paintBullets():
 '''
 action部分
 '''
-
 
 # 事件函數
 def action():
@@ -121,9 +118,8 @@ def action():
         hitAction()
         actioner.endAction(bus, screen, sets)
 
-# 走一步
+# 殭屍走路和子彈移動
 def stepAction():
-    # 殭屍走一步
     for zombie in bus.zombies:
         zombie.step(sets)
     for bullet in bus.bullets:
@@ -150,7 +146,6 @@ def zombiesAction():
             if type < 8:
                 bus.zombies.append(Zombie_bucket(screen, sets.zombie_bucketImages))
             else:
-                # 儲存殭屍到列表中
                 bus.zombies.append(Zombie_normal(screen, sets.zombie_normalImages))
 
 
