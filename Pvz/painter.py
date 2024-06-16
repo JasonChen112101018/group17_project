@@ -15,7 +15,7 @@ def initStartSurface(bus, screen, sets):
     screen.blit(scaled_beginBtn, (600,100))
     pygame.font.init()
     ft = pygame.font.Font('scorefront.ttf', 45)
-    Str = ft.render("X", True, (255, 0, 0))
+    Str = ft.render("X", True, (0, 0, 0))
     screen.blit(Str, (950, 500))
 
 # 滑鼠拖曳植物

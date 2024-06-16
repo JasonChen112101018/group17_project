@@ -176,19 +176,11 @@ def hitAction() :
         elif zombie.life == 60:
             if zombie.headFlag is True:
                 zombie.images = sets.zombieLostHeadImages
-                zombie_died += 1
                 zombie.headFlag = False
         elif zombie.life <= 0:
-            #zombie_killed += 1
-            #if zombie_killed % 64 == 0:
-             #   zombie_killed -= 64
-              #  zombie_died += 1
-            #elif zombie_killed % 334 == 0:
-             #   zombie_killed -= 334
-              #  zombie_died += 1
-            #print(zombie_killed)
             bus.zombies.remove(zombie)
-            
+            if zombie.life == 0:
+                zombie_died += 1
 
 # 殭屍吃植物
 def eat(zb):
