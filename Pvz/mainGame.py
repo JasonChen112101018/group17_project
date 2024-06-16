@@ -178,6 +178,17 @@ def hitAction() :
                 zombie.images = sets.zombieLostHeadImages
                 zombie.headFlag = False
         elif zombie.life <= 0:
+#<<<<<<< Updated upstream
+#=======
+            #zombie_killed += 1
+            #if zombie_killed % 64 == 0:
+             #   zombie_killed -= 64
+              #  zombie_died += 1
+            #elif zombie_killed % 334 == 0:
+             #   zombie_killed -= 334
+              #  zombie_died += 1
+            print(zombie_died)
+#>>>>>>> Stashed changes
             bus.zombies.remove(zombie)
             if zombie.life == 0:
                 zombie_died += 1
