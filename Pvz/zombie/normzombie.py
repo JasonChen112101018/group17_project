@@ -5,7 +5,6 @@ from util.bus import Bus
 
 bus = Bus() 
 
-
 class Zombie_normal(ParentZombie):
     def __init__(self, screen, images):
         self.screen = screen
