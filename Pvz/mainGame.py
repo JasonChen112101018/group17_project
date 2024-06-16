@@ -16,7 +16,6 @@ import time
 
 bus = Bus()
 sets = Setting()
-zombie_died = 0
 screen = pygame.display.set_mode((1050, 600), 0, 0)
 
 def initSun():
@@ -157,17 +156,13 @@ def zombiesAction():
 
 # 殭屍行動函數
 def hitAction() :
-    global zombie_killed
-    global zombie_died
     for zombie in bus.zombies:
         eat(zombie)
         hit(zombie)
-        if 60 < zombie.life <= 100:
+        if zombie.life == 100:
             if not isinstance(zombie, Zombie_normal):
                 zombie.images = sets.zombie_normalImages
         elif zombie.life == 60:
-            zombie_died += 1
-        elif 0 < zombie.life < 60:
             if zombie.headFlag is True:
                 zombie.images = sets.zombieLostHeadImages
                 zombie.headFlag = False
@@ -176,6 +171,7 @@ def hitAction() :
 
 # 殭屍吃植物
 def eat(zb):
+    global zombie_died
     for plant in bus.paintPlants:
         if not isinstance(plant, Spikeweed) and not isinstance(zb, Zombie_head) and not isinstance(zb, Zombie_dead):
             if abs(plant.x + plant.width/2 - zb.x - zb.width/2) < 50  and zb.y < plant.y  and zb.y + 100 > plant.y:
@@ -202,20 +198,21 @@ def eat(zb):
         if isinstance(plant, Spikeweed):
             if abs((plant.x + plant.width / 2) - (zb.x + zb.width/2)) < 10 and zb.y < plant.y - 40 and zb.y + 140 > plant.y:
                 zb.life -= 1
-                if zb.life <= 0:
+                if zb.life == 0:
+                    zombie_died += 1
                     bus.zombies.append(Zombie_dead(screen, sets.zombieDieImages, zb.x, zb.y))
-                elif zb.life <= 60:
+                elif zb.life == 60:
                     if zb.headFlag is True:
                         zb.images = sets.zombieLostHeadImages
                         bus.zombies.append(Zombie_head(screen, sets.zombieHeadImages, zb.x, zb.y))
-                elif zb.life <= 100:
+                elif zb.life == 100:
                     if not isinstance(zb, Zombie_normal):
                         zb.images = sets.zombie_normalImages
 
 
 # 殭屍被攻擊
 def hit(zombie):
-    
+    global zombie_died
     for bullet in bus.bullets:
         if zombie.hitBy(bullet) and not isinstance(zombie, Zombie_head) and not isinstance(zombie, Zombie_dead):
             zombie.life -= 10
@@ -226,14 +223,15 @@ def hit(zombie):
                 zombie.life -=10
                 bus.bullets.remove(bullet)
 
-            if 60 < zombie.life <= 100:
+            if zombie.life == 100:
                 if not isinstance(zombie, Zombie_normal):
                     zombie.images = sets.zombie_normalImages
-            elif 0 < zombie.life <= 60:
+            elif zombie.life == 60:
                 if zombie.headFlag is True:
                     zombie.images = sets.zombieLostHeadImages
                     bus.zombies.append(Zombie_head(screen, sets.zombieHeadImages, zombie.x, zombie.y))
-            elif zombie.life <= 0:
+            elif zombie.life == 0:
+                zombie_died += 1
                 bus.zombies.append(Zombie_dead(screen, sets.zombieDieImages, zombie.x, zombie.y))
 
         # 子彈超出邊界移除
