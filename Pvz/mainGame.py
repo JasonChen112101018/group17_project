@@ -176,10 +176,7 @@ def hitAction() :
                 zombie.headFlag = False
                 zombie_died += 1
         elif zombie.life <= 0:
-#<<<<<<< Updated upstream
-#=======
-            #zombie_killed += 1
-            #if zombie_killed % 64 == 0:
+
              
              
             bus.zombies.remove(zombie)
