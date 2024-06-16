@@ -13,6 +13,10 @@ def initStartSurface(bus, screen, sets):
     screen.blit(scaled_surface, (0,0))
     screen.blit(scaled_wood, (100,140))
     screen.blit(scaled_beginBtn, (600,100))
+    pygame.font.init()
+    ft = pygame.font.Font('scorefront.ttf', 45)
+    Str = ft.render("X", True, (255, 0, 0))
+    screen.blit(Str, (950, 500))
 
 # 滑鼠拖曳植物
 def cardMovePaint(bus, screen, sets):
