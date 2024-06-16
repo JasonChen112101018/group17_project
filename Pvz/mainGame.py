@@ -175,9 +175,6 @@ def hitAction() :
                 zombie.headFlag = False
                 zombie_died += 1
         elif zombie.life <= 0:
-
-             
-             
             bus.zombies.remove(zombie)
 
 # 殭屍吃植物
