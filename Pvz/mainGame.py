@@ -45,7 +45,6 @@ def paint():
     scaled_menuBar = pygame.transform.scale(sets.menuBar, (x_image*0.8, y_image*0.8))
     scaled_x_image, scaled_y_image = scaled_menuBar.get_size()
     global zombie_killed
-    #if bus.state == bus.DEAD or bus.state == bus.END:
     
 
     # 繪製背景
