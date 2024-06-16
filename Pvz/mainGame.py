@@ -257,7 +257,6 @@ def main():
     initSun()
     while True:
         action()
-        #paintScore()
         paint()
         pygame.display.update()
 
