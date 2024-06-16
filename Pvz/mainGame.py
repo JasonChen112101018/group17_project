@@ -181,8 +181,7 @@ def hitAction() :
             #zombie_killed += 1
             #if zombie_killed % 64 == 0:
              #   zombie_killed -= 64
-              #  zombie_died += 1
-            #elif zombie_killed % 334 == 0:
+              #  zombie_died += 
              
             bus.zombies.remove(zombie)
 
