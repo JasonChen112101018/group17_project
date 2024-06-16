@@ -1,8 +1,6 @@
 import pygame
 from util.bus import Bus
 
-
-
 bus = Bus()
 
 # 繪製植物
