@@ -193,13 +193,15 @@ def eat(zb):
                 if plant.life == 0:
                     bus.gridList[plant.gridX][plant.gridY] = -1
                     bus.paintPlants.remove(plant)
-                    if zb.images == sets.zombieLostHeadAttackImages:
-                        zb.images = sets.zombieLostHeadImages
-                    else:
-                        if zb.images == sets.normalAttackImages:
-                            zb.images = sets.zombie_normalImages
-                        else:
-                            zb.images = sets.zombie_bucketImages
+                    for zb in bus.zombies:
+                        if abs((plant.x + plant.width / 2) - (zb.x + zb.width/2)) < zb.width/2 + plant.width/2 and zb.y < plant.y  and zb.y + 100 > plant.y:
+                            if zb.images == sets.zombieLostHeadAttackImages:
+                                zb.images = sets.zombieLostHeadImages
+                            else:
+                                if zb.images == sets.normalAttackImages:
+                                    zb.images = sets.zombie_normalImages
+                                else:
+                                    zb.images = sets.zombie_bucketImages
 
         if isinstance(plant, Spikeweed):
             if abs((plant.x + plant.width / 2) - (zb.x + zb.width/2)) < 10 and zb.y < plant.y - 40 and zb.y + 140 > plant.y:
