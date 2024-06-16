@@ -170,10 +170,10 @@ def hitAction() :
     for zombie in bus.zombies:
         eat(zombie)
         hit(zombie)
-        if zombie.life == 5:
+        if zombie.life == 100:
             if not isinstance(zombie, Zombie_normal):
                 zombie.images = sets.zombie_normalImages
-        elif zombie.life == 3:
+        elif zombie.life == 60:
             if zombie.headFlag is True:
                 zombie.images = sets.zombieLostHeadImages
                 zombie_died += 1
@@ -196,9 +196,9 @@ def eat(zb):
     for plant in bus.paintPlants:
         if not isinstance(plant, Spikeweed) and not isinstance(zb, Zombie_head) and not isinstance(zb, Zombie_dead):
            if abs((plant.x + plant.width / 2) - (zb.x + 20)) < 10 and zb.y < plant.y - 40 and zb.y + 140 > plant.y:
-                if zb.life <= 3:
+                if zb.life <= 60:
                     zb.images = sets.zombieLostHeadAttackImages
-                elif zb.life <= 5:
+                elif zb.life <= 100:
                     zb.images = sets.normalAttackImages
                 else:
                     zb.images = sets.bucketAttackImages
@@ -217,10 +217,10 @@ def eat(zb):
         if isinstance(plant, Spikeweed):
             if abs((plant.x + plant.width / 2) - (zb.x + zb.width/2)) < 10 and zb.y < plant.y - 40 and zb.y + 140 > plant.y:
                 zb.life -= 1
-                zb.x += 0.01
-                if zb.life == 5:
+                zb.x += 0.05
+                if zb.life == 100:
                     zb.images = sets.zombie_normalImages
-                elif zb.life == 3:
+                elif zb.life == 60:
                     zb.images = sets.zombieLostHeadImages
                     bus.zombies.append(Zombie_head(screen, sets.zombieHeadImages, zb.x, zb.y))
                 elif zb.life == 0:
@@ -232,17 +232,18 @@ def hit(zombie):
     
     for bullet in bus.bullets:
         if zombie.hitBy(bullet) and not isinstance(zombie, Zombie_head) and not isinstance(zombie, Zombie_dead):
-            zombie.life -= 1
+            zombie.life -= 10
             if bullet.type == 0:
                 bus.bullets.remove(bullet)
             elif bullet.type == 1:
                 zombie.x += 10
+                zombie.life -=5
                 bus.bullets.remove(bullet)
 
-            if zombie.life == 5:
+            if zombie.life == 100:
                 if not isinstance(zombie, Zombie_normal):
                     zombie.images = sets.zombie_normalImages
-            elif zombie.life == 3:
+            elif zombie.life == 60:
                 if zombie.headFlag is True:
                     zombie.images = sets.zombieLostHeadImages
                     bus.zombies.append(Zombie_head(screen, sets.zombieHeadImages, zombie.x, zombie.y))

@@ -13,7 +13,7 @@ class Zombie_normal(ParentZombie):
         self.image = pygame.image.load(images[0])
         self.x = 1150
         self.y = 30 + random.randint(0, 4) * 95
-        self.life = 5
+        self.life = 100
         self.damage = 1
         super(Zombie_normal, self).__init__(screen, self.x, self.y, self.image, self.life, self.damage)
 
