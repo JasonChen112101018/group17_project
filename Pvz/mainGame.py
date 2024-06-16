@@ -69,8 +69,6 @@ def paint():
         ft = pygame.font.Font('coltones.regular.ttf', 60)
         Str = ft.render("Score : " + str(5*zombie_died), True, (255,255 , 255))
         screen.blit(Str, (half_x - (scaled_x_image/3)+40, height - 86))
-        #paintScore()
-        #painter.deadPaint(bus, screen, sets)
     elif bus.state == bus.END:
         painter.wonPaint(bus, screen, sets)
         pygame.font.init()
