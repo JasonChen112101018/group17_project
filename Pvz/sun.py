@@ -21,5 +21,5 @@ class Sun(object):
 
 
     def step(self):
-        self.y += 1
+        self.y += 0.1
         self.index += 1
