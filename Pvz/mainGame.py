@@ -46,8 +46,7 @@ def paint():
     scaled_x_image, scaled_y_image = scaled_menuBar.get_size()
     global zombie_killed
     #if bus.state == bus.DEAD or bus.state == bus.END:
-    '''
-    screen.blit(Str, (half_x - (scaled_x_image/3), height - (scaled_y_image)+50))'''
+    
 
     # 繪製背景
     painter.initScenario(bus, screen, sets)
