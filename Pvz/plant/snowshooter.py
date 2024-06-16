@@ -26,7 +26,7 @@ class Snowshooter(Plant):
         self.index += 1
         if self.index == self.interval:
             self.index = 0
-            if zombieflag():
+            if self.zombieflag():
                 bus.bullets.append(self.shootBy(screen, sets.snowPeaBulletImg))
         ix = self.index / 7 % len(self.images)
         self.image = self.images[int(ix)]
