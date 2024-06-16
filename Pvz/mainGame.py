@@ -202,15 +202,15 @@ def eat(zb):
         if isinstance(plant, Spikeweed):
             if abs((plant.x + plant.width / 2) - (zb.x + zb.width/2)) < 10 and zb.y < plant.y - 40 and zb.y + 140 > plant.y:
                 zb.life -= 1
-                if 60 < zb.life <= 100:
-                    if not isinstance(zb, Zombie_normal):
-                        zb.images = sets.zombie_normalImages
-                elif 0 < zb.life <= 60:
+                if zb.life <= 0:
+                    bus.zombies.append(Zombie_dead(screen, sets.zombieDieImages, zb.x, zb.y))
+                elif zb.life <= 60:
                     if zb.headFlag is True:
                         zb.images = sets.zombieLostHeadImages
                         bus.zombies.append(Zombie_head(screen, sets.zombieHeadImages, zb.x, zb.y))
-                elif zb.life <= 0:
-                    bus.zombies.append(Zombie_dead(screen, sets.zombieDieImages, zb.x, zb.y))
+                elif zb.life <= 100:
+                    if not isinstance(zb, Zombie_normal):
+                        zb.images = sets.zombie_normalImages
 
 
 # 殭屍被攻擊
