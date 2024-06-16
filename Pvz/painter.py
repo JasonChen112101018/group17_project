@@ -15,7 +15,7 @@ def initStartSurface(bus, screen, sets):
     screen.blit(scaled_beginBtn, (600,100))
     pygame.font.init()
     ft = pygame.font.Font('scorefront.ttf', 45)
-    Str = ft.render("X", True, (0, 0, 0))
+    Str = ft.render("Exit", True, (0, 0, 0))
     screen.blit(Str, (950, 500))
 
 # 滑鼠拖曳植物
@@ -170,12 +170,12 @@ def deadPaint(bus, screen, sets):
 
     
 
-def restartPaint(bus, screen, sets):
+'''def restartPaint(bus, screen, sets):
     screen.blit(sets.selectionBar, (555, 340))
     pygame.font.init()
     ft = pygame.font.Font('scorefront.ttf', 32)
     Str = ft.render("重新開始", True, (60, 60, 60))
-    screen.blit(Str, (605, 346))
+    screen.blit(Str, (605, 346))'''
 
 def wonPaint(bus, screen, sets):
     width, height = screen.get_size()
