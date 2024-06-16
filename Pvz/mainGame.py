@@ -49,7 +49,6 @@ def paint():
 
     # 繪製背景
     painter.initScenario(bus, screen, sets)
-    #paintZombies()
     painter.cardMovePaint(bus, screen, sets)
     paintPlants()
     paintBullets()
