@@ -14,12 +14,9 @@ class Sun(object):
         self.score = 25 #分數
         self.disappearTime = 0 #消失時間
 
-
-
     def blitme(self):
         self.screen.blit(self.image, (self.x, self.y))
-
-
+        
     def step(self):
         self.y += 0.5
         self.index += 0.5
