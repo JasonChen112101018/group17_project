@@ -185,7 +185,7 @@ def eat(zb):
     
     for plant in bus.paintPlants:
         if not isinstance(plant, Spikeweed) and not isinstance(zb, Zombie_head) and not isinstance(zb, Zombie_dead):
-           if abs((plant.x + plant.width / 2) - (zb.x + zb.width/2)) < zb.width/2 + plant.width/2 and zb.y < plant.y  and zb.y + 100 > plant.y:
+            if abs((plant.x + plant.width / 2) - (zb.x + zb.width/2)) < zb.width/2 + plant.width/2 and zb.y < plant.y  and zb.y + 100 > plant.y:
                 if zb.life <= 60:
                     zb.images = sets.zombieLostHeadAttackImages
                 elif zb.life <= 100:
@@ -193,7 +193,7 @@ def eat(zb):
                 else:
                     zb.images = sets.bucketAttackImages
                 plant.life -= 1
-                if plant.life <= 0:
+                if plant.life == 0:
                     bus.gridList[plant.gridX][plant.gridY] = -1
                     bus.paintPlants.remove(plant)
                     if zb.images == sets.zombieLostHeadAttackImages:
