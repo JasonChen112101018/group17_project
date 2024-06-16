@@ -197,7 +197,7 @@ def eat(zb):
     
     for plant in bus.paintPlants:
         if not isinstance(plant, Spikeweed) and not isinstance(zb, Zombie_head) and not isinstance(zb, Zombie_dead):
-           if abs((plant.x + plant.width / 2) - (zb.x + 20)) < 10 and zb.y < plant.y - 40 and zb.y + 140 > plant.y:
+           if abs((plant.x + plant.width / 2) - (zb.x + zb.width/2)) < zb.width/2 + plant.width/2 and zb.y < plant.y  and zb.y + 100 > plant.y:
                 if zb.life <= 60:
                     zb.images = sets.zombieLostHeadAttackImages
                 elif zb.life <= 100:
