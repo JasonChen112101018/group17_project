@@ -246,11 +246,8 @@ def hit(zombie):
 
 
 '''
- main function 
-'''
-
-'''
-    '''
+ main function
+ '''
 
 def main():
     pygame.display.set_caption("Plants vs Zombies")
