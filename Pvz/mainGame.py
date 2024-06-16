@@ -16,7 +16,6 @@ import time
 
 bus = Bus()
 sets = Setting()
-zombie_killed = 0
 zombie_died = 0
 screen = pygame.display.set_mode((1050, 600), 0, 0)
 
@@ -178,7 +177,7 @@ def hitAction() :
             if zombie.headFlag is True:
                 zombie.images = sets.zombieLostHeadImages
                 zombie.headFlag = False
-                zombie_killed += 1
+                zombie_died += 1
         elif zombie.life <= 0:
 #<<<<<<< Updated upstream
 #=======
