@@ -168,12 +168,7 @@ def deadPaint(bus, screen, sets):
     Str = ft.render("Game Defeat", True, (0, 195, 0))
     screen.blit(Str, (half_x - (scaled_x_image/4 + 10), height - (scaled_y_image)+150))
 
-    # 結束
-    #screen.blit(sets.selectionBar, (555, 410))
-    #pygame.font.init()
-    #ft = pygame.font.Font('hiw.ttf', 32)
-    #Str = ft.render("exit", True, (60, 60, 60))
-    #screen.blit(Str, (628, 417))
+    
 
 def restartPaint(bus, screen, sets):
     screen.blit(sets.selectionBar, (555, 340))
