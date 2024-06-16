@@ -24,7 +24,7 @@ class Peashooter(Plant):
         self.interval = 150
         self.cd = 10
 
-    # 植物晃動
+    # 植物晃動跟子彈生成判定
     def step(self, bus, screen, sets):
         self.index += 1
         if self.index == self.interval:
