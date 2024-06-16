@@ -22,11 +22,12 @@ screen = pygame.display.set_mode((1050, 600), 0, 0)
 
 def initSun():
     for i in range(1):
-        xx = random.randint(260, 880)
-        yy = -random.randint(100, 300)
-        goal = random.randint(300, 600)
-        sun = Sun(screen, sets.sunImage, xx, yy,goal)
-        bus.sunFall.append(sun)
+        if bus.globalTime % 2000 == 0:
+            xx = random.randint(260, 880)
+            yy = -random.randint(100, 300)
+            goal = random.randint(300, 600)
+            sun = Sun(screen, sets.sunImage, xx, yy,goal)
+            bus.sunFall.append(sun)
 
 '''
 paint part
@@ -177,6 +178,7 @@ def hitAction() :
             if zombie.headFlag is True:
                 zombie.images = sets.zombieLostHeadImages
                 zombie.headFlag = False
+                zombie_killed += 1
         elif zombie.life <= 0:
 #<<<<<<< Updated upstream
 #=======
@@ -190,8 +192,6 @@ def hitAction() :
             print(zombie_died)
 #>>>>>>> Stashed changes
             bus.zombies.remove(zombie)
-            if zombie.life == 0:
-                zombie_died += 1
 
 # 殭屍吃植物
 def eat(zb):
@@ -243,10 +243,10 @@ def hit(zombie):
                 zombie.life -=5
                 bus.bullets.remove(bullet)
 
-            if zombie.life == 100:
+            if 60 < zombie.life <= 100:
                 if not isinstance(zombie, Zombie_normal):
                     zombie.images = sets.zombie_normalImages
-            elif zombie.life == 60:
+            elif 0 < zombie.life <= 60:
                 if zombie.headFlag is True:
                     zombie.images = sets.zombieLostHeadImages
                     bus.zombies.append(Zombie_head(screen, sets.zombieHeadImages, zombie.x, zombie.y))
