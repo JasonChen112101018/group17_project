@@ -4,7 +4,6 @@ from util.bus import Bus
 from zombie.head import Zombie_head
 from zombie.dead import Zombie_dead
 
-
 bus = Bus()
 # 繪製僵屍
 def paintZombies():
