@@ -14,7 +14,7 @@ class Wallnut(Plant):
         super(Wallnut,self).__init__(screen, self.x, self.y, self.image)
 
         self.index = 0
-        self.life = 200
+        self.life = 500
         self.sunshine = 50
         self.attack = 0
         self.interval = 50
