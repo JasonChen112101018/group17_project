@@ -14,7 +14,6 @@ import random
 
 sets = Setting()
 
-# 當滑鼠被點即時啟用函數
 # 判斷滑鼠點擊卡片
 def cardMouseClickListener(bus):
     leftButtonDown = pygame.mouse.get_pressed()[0]
@@ -114,7 +113,7 @@ def initPlantsMouseClickListener(bus, screen):
             bus.cardState = Constant.CARD_NOT_CLICKED
 
 def sunMouseClickListener(bus, screen, sets):
-        # 用中左鍵撿太陽並返回TrueorFalse
+        # 判斷中左鍵是否點擊
         leftFlag = pygame.mouse.get_pressed()[0]
 
         mouseX, mouseY = pygame.mouse.get_pos()
@@ -148,7 +147,7 @@ def runOrPause(bus, screen, sets):
     width, height = screen.get_size()
     half_x = width / 2
     half_y = height / 2
-
+    #判斷左鍵點擊位置
     if mouseX >= width - 200 and mouseX <= width - 20 and mouseY >= 10 and mouseY <= 10 + 41 and bus.state == bus.RUNNING:
         bus.state = bus.PAUSE
     elif 500 < mouseX  < 900 and 130 < mouseY < 300 and bus.state == bus.START:
@@ -169,7 +168,7 @@ def restart(bus, screen):
     # 是否選擇了卡片
     bus.cardState = Constant.CARD_NOT_CLICKED
 
-    #  選擇卡片的類型
+    # 選擇卡片的類型
     bus.cardSelection = Constant.NUT_SELECTED
 
     # 表示當前需要繪製的圖片
@@ -203,7 +202,7 @@ def restart(bus, screen):
     # 時間軸
     bus.globalTime = 0
 
-    # 格子的二維數組
+    # 格子的座標
     bus.gridList = [([-1] * 5) for i in range(9)]
 
     # 遊戲狀態
@@ -212,7 +211,7 @@ def restart(bus, screen):
     # 子彈儲存列表
     bus.bullets = []
 
-    #是否進入中段和末段
+    #遊戲中期和末期判定
     bus.midPercentage = False
     bus.finalPercentage = False
 
