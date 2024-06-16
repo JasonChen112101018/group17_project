@@ -96,7 +96,7 @@ def paintSunScore(bus, screen, sets):
         screen.blit(scoreStr, (17, 59))
 
 
-#進度條
+#隨遊戲進度繪製
 def painProgressBar(bus, screen, sets):
 
     width, height = screen.get_size()
@@ -168,9 +168,7 @@ def deadPaint(bus, screen, sets):
     Str = ft.render("Game Defeat", True, (0, 195, 0))
     screen.blit(Str, (half_x - (scaled_x_image/4 + 10), height - (scaled_y_image)+150))
 
-    
-
-
+#勝利畫面
 def wonPaint(bus, screen, sets):
     width, height = screen.get_size()
     half_x = width / 2
