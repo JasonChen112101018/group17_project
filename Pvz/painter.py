@@ -150,7 +150,7 @@ def paintPause(bus, screen, sets):
     x_image , y_image = sets.Pause.get_size()
     screen.blit(sets.Pause, (half_x - x_image/2, 0))
     pygame.font.init()
-    ft = pygame.font.Font('hiw.ttf', 20)
+    ft = pygame.font.Font('chelsea.regular.ttf', 25)
     Str = ft.render("Press to continue", True, (255, 0, 0))
     screen.blit(Str, (half_x - x_image/2 +50  , 90))
 
