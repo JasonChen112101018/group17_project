@@ -254,9 +254,7 @@ def hit(zombie):
     half_x = width / 2
     half_y = height / 2
     x_image , y_image = sets.menuBar.get_size()
-    scaled_menuBar = pygame.transform.scale(sets.menuBar, (x_image*0.8, y_image*0.8))
-    scaled_x_image, scaled_y_image = scaled_menuBar.get_size()
-    global zombie_killed
+    scaled_menuBar = pygame.t
     '''
 
 def main():
