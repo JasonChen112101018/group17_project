@@ -170,12 +170,6 @@ def deadPaint(bus, screen, sets):
 
     
 
-'''def restartPaint(bus, screen, sets):
-    screen.blit(sets.selectionBar, (555, 340))
-    pygame.font.init()
-    ft = pygame.font.Font('scorefront.ttf', 32)
-    Str = ft.render("重新開始", True, (60, 60, 60))
-    screen.blit(Str, (605, 346))'''
 
 def wonPaint(bus, screen, sets):
     width, height = screen.get_size()
