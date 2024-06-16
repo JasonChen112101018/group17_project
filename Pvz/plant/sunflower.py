@@ -33,7 +33,7 @@ class Sunflower(Plant):
 
         Bus.sunStay.append(sun)
 
-    #實現植物搖晃
+    #實現植物搖晃和陽光生成
     def step(self, bus, screen, sets):
         self.index += 1
 
