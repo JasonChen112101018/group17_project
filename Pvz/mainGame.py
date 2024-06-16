@@ -260,8 +260,7 @@ def hit(zombie):
     #if bus.state == bus.DEAD or bus.state == bus.END:
     pygame.font.init()
     ft = pygame.font.Font('hiw.ttf', 45)
-    Str = ft.render("Score : " + str(5*zombie_died), True, (0, 195, 0))
-    screen.blit(Str, (half_x - (scaled_x_image/3), height - (scaled_y_image)+50))'''
+    Str = ft.render("Score : " + str(5*zombie_died), True, (0, 195, 0))'''
 
 def main():
     pygame.display.set_caption("Plants vs Zombies")
